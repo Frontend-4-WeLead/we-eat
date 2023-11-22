@@ -8,15 +8,15 @@ export class DataService {
 
   http = inject(HttpClient)
 
-  getX() {
-    return this.http.get('http://localhost:3000/x')
+  getAllShops() {
+    return this.http.get('http://localhost:3000/all')
   }
 
-  getY() {
-    return this.http.get('http://localhost:3000/y')
+  getShopById(id: number) {
+    return this.http.get(`http://localhost:3000/${id}`)
   }
 
-  getZ() {
-    return this.http.get('http://localhost:3000/z')
+  getProductsById(id: number) {
+    return this.http.get(`http://localhost:3000/${id}/products`)
   }
 }

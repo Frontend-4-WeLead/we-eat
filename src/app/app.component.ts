@@ -15,22 +15,22 @@ export class AppComponent {
 
   data_service = inject(DataService)
 
-  getZ() {
-    this.data_service.getZ().subscribe({
+  getProductsById() {
+    this.data_service.getProductsById(1).subscribe({
       next: (res) => {
         console.log(res)
       }
     })
   }
-  getY() {
-    this.data_service.getY().subscribe({
+  getShopById() {
+    this.data_service.getShopById(1).subscribe({
       next: (res) => {
         console.log(res)
       }
     });
   }
-  getX() {
-    this.data_service.getX().subscribe({
+  getAllShops() {
+    this.data_service.getAllShops().subscribe({
       next: (res) => {
         console.log(res)
       }
