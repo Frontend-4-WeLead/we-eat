@@ -23,7 +23,7 @@ export interface Product {
     calories: number;
 }
 
-export interface StoreCategory {
+export interface StoreCategory { 
     id: number;
     title: string;
 }
