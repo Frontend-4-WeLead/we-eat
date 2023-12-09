@@ -1,1 +1,30 @@
-<p>store-page works!</p>
+<app-header />
+<div class="row">
+	<div class="col-8" style="margin-left: 2em;">
+
+		<div class="my_wrapper m-3">
+			<div class="row">
+				<img [src]="storeInfo.image_url" alt="`{{storeInfo.name}}`'s store image" class="rounded-4">
+			</div>
+			<div class="bg-danger rounded-3 " id="store_name">
+				<p class="m-0">{{storeInfo.name}}</p>
+			</div>
+		</div>
+		<div class="m-3">
+			<h4 class="my-4 mx-3">Products</h4>
+			@for (product of storeInfo.products; track $index) {
+			<app-product [title]="product.title" [price]="product.price" [cart]="cart" />
+			<br>
+			}
+
+		</div>
+	</div>
+	<div class="col-3">
+		@for (item of cart; track $index)
+		{
+		<app-product [title]="item.title" [price]="item.price" [cart]="cart" />
+		}
+	</div>
+</div>
+
+<footer>test footer</footer>

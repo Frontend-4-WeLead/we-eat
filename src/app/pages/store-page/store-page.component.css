@@ -1,0 +1,12 @@
+#store_name {
+	width: max-content;
+	padding: 3px 8px;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	margin-left: 10px;
+}
+
+.my_wrapper {
+	position: relative;
+}
