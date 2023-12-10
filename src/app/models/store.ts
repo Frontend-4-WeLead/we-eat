@@ -9,7 +9,7 @@ export interface Store {
     opening_hour: number;
     closing_hour: number;
     products: Product[];
-    shopCategories: StoreCategory[];
+    storeCategories: StoreCategory[];
 }
 
 export interface Product {
@@ -23,7 +23,7 @@ export interface Product {
     calories: number;
 }
 
-export interface StoreCategory { 
+export interface StoreCategory {
     id: number;
     title: string;
 }
