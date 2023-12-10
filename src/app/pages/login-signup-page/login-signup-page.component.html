@@ -1,20 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-white bg-white">
     <div class="container-fluid">
+      <img src="\assets\images\we-eat-logo.png" width="70" height="70" class="d-inline-block align-top logo" alt="">
       <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
-          <button class="btn btn-light m-2" type="submit">Σύνδεση</button>
-          <button class="btn btn-light" type="submit">Εγγραφή</button>
+          <button [ngClass]="showLogin ? 'active-btn' : ' ' " (click)="onButton1()" class="btn btn-light m-2 " type="submit">Σύνδεση</button>
+          <button [ngClass]="!showLogin ? 'active-btn' : ' ' "  (click)="onButton2()" class="btn btn-light sign-up" type="submit">Εγγραφή</button>
       </div>
     </div>
-  </nav>
+  </nav> 
 <div class="container">
     <div class="row">
-      <div class="col-6">
-        <p>
-       hello
-        </p>
+      <div class="col-4">
+        <app-login-page *ngIf="showLogin">
+        </app-login-page> 
+        <app-sing-up-page *ngIf="!showLogin"/>
+        
       </div>
-      <div class="col-6">
-        <img src="\assets\images\login-pic.jpg">
+      <div class="col-8">
+        <img src="\assets\images\pizza.jpg" width="800" height="600">
       </div>
     </div>
     </div>
