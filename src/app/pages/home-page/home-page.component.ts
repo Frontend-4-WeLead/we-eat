@@ -14,13 +14,13 @@ export class HomePageComponent {
   storesList: any;
   service = inject(DataService);
 
-  getAllShops(){
-    this.service.getAllShops().subscribe({
+  getAllStores(){
+    this.service.getAllStores().subscribe({
       next:res => this.storesList = res
     })
   }  
 
   ngOnInit(){
-    this.getAllShops();
+    this.getAllStores();
   }
 }

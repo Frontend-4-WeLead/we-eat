@@ -1,17 +1,19 @@
-<ul class="stores-categories-list">
-    <li>Κατηγορία 1</li>
-    <li>Κατηγορία 2</li>
-    <li>Κατηγορία 3</li>
-</ul>
-<div class="card-deck stores-list">
-    @for(s of storesList; track $index){
-
-        <app-strore-item [store]="s" class="store-item-wrapper"></app-strore-item>
-        <!-- <pre>{{storesList | json}}</pre> -->
-
-    } @empty {
-        <div class="empty-list">
-            <h2>No shops available....</h2>
-        </div>
-    }
+<div class="container">
+    <ul class="stores-categories-list">
+        <li>Κατηγορία 1</li>
+        <li>Κατηγορία 2</li>
+        <li>Κατηγορία 3</li>
+    </ul>
+    <div class="card-deck stores-list">
+        @for(s of storesList; track $index){
+    
+            <app-strore-item [store]="s" class="store-item-wrapper"></app-strore-item>
+            <!-- <pre>{{storesList | json}}</pre> -->
+    
+        } @empty {
+            <div class="empty-list">
+                <h2>No shops available....</h2>
+            </div>
+        }
+    </div>
 </div>
