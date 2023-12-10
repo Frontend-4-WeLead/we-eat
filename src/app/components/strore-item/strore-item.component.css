@@ -1,0 +1,13 @@
+.card.store-item {
+    box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.store-item a.store-item-link-wrapper {
+    color: inherit;
+}
+
+.store-item .card-title {
+    font-size: 18px;
+    font-weight: 700;
+}

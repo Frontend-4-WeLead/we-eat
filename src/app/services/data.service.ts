@@ -8,11 +8,11 @@ export class DataService {
 
   http = inject(HttpClient)
 
-  getAllShops() {
+  getAllStores() {
     return this.http.get('http://localhost:3000/all')
   }
 
-  getShopById(id: number) {
+  getStoreById(id: number) {
     return this.http.get(`http://localhost:3000/${id}`)
   }
 
