@@ -23,15 +23,15 @@ export class AppComponent {
       }
     })
   }
-  getShopById() {
-    this.data_service.getShopById(2).subscribe({
+  getStoreById() {
+    this.data_service.getStoreById(2).subscribe({
       next: (res) => {
         console.log(res)
       }
     });
   }
-  getAllShops() {
-    this.data_service.getAllShops().subscribe({
+  getAllStores() {
+    this.data_service.getAllStores().subscribe({
       next: (res) => {
         console.log(res)
       }

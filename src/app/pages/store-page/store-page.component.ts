@@ -17,7 +17,7 @@ export class StorePageComponent implements OnInit {
   cart: Array<any> = [];
 
   ngOnInit(): void {
-    this.data_service.getShopById(2).subscribe({
+    this.data_service.getStoreById(2).subscribe({
       next: (data) => {
         this.storeInfo = data;
       }
