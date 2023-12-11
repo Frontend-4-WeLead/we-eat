@@ -2,12 +2,12 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-strore-item',
+  selector: 'app-store-item',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './strore-item.component.html',
-  styleUrl: './strore-item.component.css'
+  templateUrl: './store-item.component.html',
+  styleUrl: './store-item.component.css'
 })
-export class StroreItemComponent {
+export class StoreItemComponent {
   @Input() store: any;
 }
