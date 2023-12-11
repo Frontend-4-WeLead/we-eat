@@ -7,7 +7,7 @@
     <div class="card-deck stores-list">
         @for(s of storesList; track $index){
     
-            <app-strore-item [store]="s" class="store-item-wrapper"></app-strore-item>
+            <app-store-item [store]="s" class="store-item-wrapper"></app-store-item>
             <!-- <pre>{{storesList | json}}</pre> -->
     
         } @empty {
