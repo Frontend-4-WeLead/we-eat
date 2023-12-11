@@ -8,3 +8,7 @@ body>* {
 body a {
     text-decoration: none;
 }
+
+html{
+    --brandcolor:#C21804;
+}
