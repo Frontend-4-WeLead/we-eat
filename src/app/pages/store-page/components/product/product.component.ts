@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Product } from '../../../../models/product';
 
 @Component({
   selector: 'app-product',
@@ -9,13 +10,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product.component.css'
 })
 export class ProductComponent {
-  @Input() title: string = "";
-  @Input() price: number = 0;
-  @Input() cart: any
+
+  @Input() cart: Array<Product> = [];
+  @Input() product: Product = { title: "", price: 0 };
 
   addToCart() {
     console.log(this.cart)
-    this.cart.push({ title: this.title, price: this.price })
+    this.cart.push(this.product)
     console.log(this.cart)
   }
 }

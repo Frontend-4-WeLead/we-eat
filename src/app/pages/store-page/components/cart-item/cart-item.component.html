@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-between border border-dark-subtle rounded-3 p-3 shadow">
+	<h6 class="my-auto">{{product.title}}</h6>
+	<div class="d-flex">
+		<p class="mx-3 my-auto">{{product.price}}€</p>
+		<div class="btn btn-danger my-auto" (click)="removeFromCart()">
+			<i class="fa fa-trash-o"></i>
+		</div>
+	</div>
+</div>

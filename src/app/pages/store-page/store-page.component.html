@@ -1,7 +1,9 @@
 <app-header style="position: sticky; top: 0px; z-index: 100;" />
+<!-- Main -->
 <div class="row">
+	<!-- Store -->
 	<div class="col-8" style="margin-left: 2em;">
-
+		<!-- Store Image and Name -->
 		<div class="my_wrapper m-3">
 			<div class="row">
 				<img [src]="storeInfo.image_url" alt="`{{storeInfo.name}}`'s store image" class="rounded-4">
@@ -10,19 +12,23 @@
 				<p class="m-0">{{storeInfo.name}}</p>
 			</div>
 		</div>
+
+		<!-- Products -->
 		<div class="m-3">
 			<h4 class="my-4 mx-3">Products</h4>
 			@for (product of storeInfo.products; track $index) {
-			<app-product [title]="product.title" [price]="product.price" [cart]="cart" />
+			<app-product [product]="{title:product.title,price:product.price}" [cart]="cart" />
 			<br>
 			}
 
 		</div>
 	</div>
+	<!-- Cart -->
 	<div class="col-3">
 		@for (item of cart; track $index)
 		{
-		<app-product [title]="item.title" [price]="item.price" [cart]="cart" />
+		<app-cart-item class="" [product]="{title:item.title,price:item.price}" [cart]="cart" />
+		<br>
 		}
 	</div>
 </div>
