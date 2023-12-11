@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StroreItemComponent } from '../../components/strore-item/strore-item.component';
 import { DataService } from '../../services/data.service';
+import { StoreItemComponent } from '../../components/store-item/store-item.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule,StroreItemComponent],
+  imports: [CommonModule,StoreItemComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
