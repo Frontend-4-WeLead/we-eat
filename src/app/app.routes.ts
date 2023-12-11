@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
 import { LoginSignupPageComponent } from './pages/login-signup-page/login-signup-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { FileNotFoundComponent } from './file-not-found/file-not-found/file-not-found.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginSignupPageComponent },
     { path: 'stores', component: HomePageComponent },
-    { path: '', redirectTo: 'login', pathMatch: "full" }
+    { path: '', redirectTo: 'login', pathMatch: "full" },
+    { path: '**', component: FileNotFoundComponent }
 ];
 
