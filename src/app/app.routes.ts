@@ -8,7 +8,6 @@ export const routes: Routes = [
     { path: 'login', component: LoginSignupPageComponent },
     { path: 'stores', component: HomePageComponent },
     { path: 'stores/:storeId', component: StorePageComponent },
-    { path: '', redirectTo: 'login', pathMatch: "full" }
     { path: '', redirectTo: 'login', pathMatch: "full" },
     { path: '**', component: FileNotFoundComponent }
 ];
