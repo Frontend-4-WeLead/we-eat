@@ -14,11 +14,16 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-    constructor(private router: Router) {}
+    constructor(private router: Router) { }
 
     isLoginOrSignUpPage(): boolean {
         const path = this.router.url;
         return path.includes("login") || path.includes("register");
+    }
+
+    searchFor(searchValue: string): void {
+     
+        
     }
 
 }

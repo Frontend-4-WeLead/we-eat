@@ -21,32 +21,35 @@
           <a class="nav-link active" aria-current="page" href="/stores">Stores</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Address
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><button class="dropdown-item">Ipirou 1</button></li>
+            <li><button class="dropdown-item">Ipirou 2</button></li>
+            <li><button class="dropdown-item">Ipirou 3</button></li>
           </ul>
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input 
+          class="form-control me-2" 
+          type="search" 
+          placeholder="Search" 
+          aria-label="Search"
+          #searchInput
+        >
+        <button class="btn btn-outline-success" type="submit" (click)="searchFor(searchInput.value); false">Search</button>
       </form>
+      <div class="user-profile">
+        <img class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" src="../../assets/images/header-profile-icon.png" ngClass="header-profile-img" />
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/user">User</a></li>
+          <li><a class="dropdown-item" href="/settings">Settings</a></li>
+          <li><a class="dropdown-item" href="/login">Logout</a></li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </nav>
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-    aria-expanded="false">
-    User
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
