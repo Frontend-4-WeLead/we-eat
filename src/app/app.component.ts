@@ -5,11 +5,12 @@ import { DataService } from './services/data.service';
 import { HeaderComponent } from './header/header.component';
 import { StorePageComponent } from './pages/store-page/store-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, StorePageComponent, HomePageComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, StorePageComponent, HomePageComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

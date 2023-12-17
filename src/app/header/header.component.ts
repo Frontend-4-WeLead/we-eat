@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddressComponent } from "../address/address.component";
-import { UserComponent } from "../user/user.component";
+import { AddressComponent } from "./address/address.component";
+import { UserComponent } from "./user/user.component";
 
 @Component({
     selector: 'app-header',
