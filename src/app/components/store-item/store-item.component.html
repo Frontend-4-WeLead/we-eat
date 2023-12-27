@@ -2,8 +2,6 @@
     <a href="#" class="store-item-link-wrapper">
         <img class="card-img-top" [src]="store.image_url" [alt]="store.category">
         <div class="card-body">
-            {{store | json}}
-            <a routerLink="/stores/{{store.id}}" routerLinkActive="router-link-active" class="btn btn-primary" >hello</a>
             <h3 class="card-title">{{store.name}}</h3>
             <div class="store-category">{{store.category}}</div>
             <div class="store-rating">{{store.rating}}</div>
