@@ -11,7 +11,18 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sing-up-page.component.css'
 })
 export class SingUpPageComponent {
-applyForm = new FormGroup({
-  
-})
+applyForm!: FormGroup
+
+ngOnInit(): void {
+  this.setFormValues();
+ }
+
+ setFormValues(){
+  this.applyForm = new FormGroup({
+    firstname: new FormControl(),
+    lastname: new FormControl(),
+    email: new FormControl(),
+    password: new FormControl()
+  });
+ }
 }
