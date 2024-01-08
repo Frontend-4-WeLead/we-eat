@@ -11,10 +11,11 @@ import { Product } from '../../../../models/product';
 })
 export class CartItemComponent {
   @Input() product: Product = { title: '', price: 0 };
+  @Input() cartIndex: number = -1;
   @Output() cartEmiter: EventEmitter<any> = new EventEmitter();
 
 
   removeFromCart() {
-    this.cartEmiter.emit(this.product);
+    this.cartEmiter.emit(this.cartIndex);
   }
 }

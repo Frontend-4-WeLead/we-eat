@@ -27,7 +27,8 @@
 	<div class="col-3">
 		@for (item of cart; track $index)
 		{
-		<app-cart-item [product]="{title:item.title,price:item.price}" (cartEmiter)="removeFromCart($event)" />
+		<app-cart-item [product]="{title:item.title,price:item.price}" [cartIndex]="$index"
+			(cartEmiter)="removeFromCart($event)" />
 		<br>
 		}
 	</div>
