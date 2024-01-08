@@ -26,5 +26,11 @@ export class StorePageComponent implements OnInit {
       }
     })
   }
+  removeFromCart(product: Product) {
+    let index = this.cart.findIndex((item) => item.title === product.title);
+    if (index > -1) {
+      this.cart.splice(index, 1);
+    }
+  }
 }
 
