@@ -1,4 +1,4 @@
-<app-header style="position: sticky; top: 0px; z-index: 100;" />
+<!-- <app-header style="position: sticky; top: 0px; z-index: 100;" /> -->
 <!-- Main -->
 <div class="row">
 	<!-- Store -->
@@ -17,7 +17,7 @@
 		<div class="m-3">
 			<h4 class="my-4 mx-3">Products</h4>
 			@for (product of storeInfo.products; track $index) {
-			<app-product [product]="{title:product.title,price:product.price}" [cart]="cart" />
+			<app-product class="prod" [product]="{title:product.title,price:product.price}" [cart]="cart" />
 			<br>
 			}
 

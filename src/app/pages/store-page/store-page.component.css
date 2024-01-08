@@ -10,3 +10,7 @@
 .my_wrapper {
 	position: relative;
 }
+
+.prod {
+	cursor: pointer;
+}
