@@ -11,9 +11,16 @@ import { RouterLink } from '@angular/router';
   styleUrl: './login-page.component.css'
 })
 export class LoginPageComponent {
+loginForm!: FormGroup
 
- 
-  applyForm = new FormGroup({
-  
-  })
+ngOnInit(): void {
+  this.setFormValues();
+ }
+
+  setFormValues(){
+    this.loginForm = new FormGroup({
+      email: new FormControl(),
+      password: new FormControl()
+    });
+  }
 }

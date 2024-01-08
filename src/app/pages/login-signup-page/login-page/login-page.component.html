@@ -1,14 +1,14 @@
-<form [formGroup]="applyForm">
+<form [formGroup]="loginForm">
   <h3 class="d-flex justify-content-center">Σύνδεση</h3>
     <!-- Email input -->
     <div data-mdb-input-init class="form-outline mb-4">
-      <input type="email" id="form2Example1" class="form-control" />
+      <input formControlName="email" type="email" id="form2Example1" class="form-control" />
       <label class="form-label" for="form2Example1">Email</label>
     </div>
   
     <!-- Password input -->
     <div data-mdb-input-init class="form-outline mb-4">
-      <input type="password" id="form2Example2" class="form-control" />
+      <input formControlName="password" type="password" id="form2Example2" class="form-control" />
       <label class="form-label" for="form2Example2">Κωδικός πρόσβασης</label>
     </div>
   
