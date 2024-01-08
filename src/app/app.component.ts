@@ -7,7 +7,6 @@ import { StorePageComponent } from './pages/store-page/store-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { MostFamousStoresComponent } from './pages/store-page/components/most-famous-stores/most-famous-stores.component';
-import { MostFamousStoresService } from './services/most-famous-stores.service';
 
 @Component({
   selector: 'app-root',
@@ -19,15 +18,14 @@ import { MostFamousStoresService } from './services/most-famous-stores.service';
 export class AppComponent {
 
   data_service = inject(DataService)
-  mostFamousStore_service = inject(MostFamousStoresService)
 
-  getProductsById() {
-    this.data_service.getProductsById(1).subscribe({
-      next: (res) => {
-        console.log(res)
-      }
-    })
-  }
+  // getProductsById() {
+  //   this.data_service.getProductsById(1).subscribe({
+  //     next: (res) => {
+  //       console.log(res)
+  //     }
+  //   })
+  // }
   getStoreById() {
     this.data_service.getStoreById(2).subscribe({
       next: (res) => {
@@ -43,8 +41,8 @@ export class AppComponent {
     });
   }
 
-  getFamousStores(){
-    this.mostFamousStore_service.getFamousStores().subscribe({
+  getFamousStores() {
+    this.data_service.getFamousStores().subscribe({
       next: (res) => {
         console.log(res)
       }

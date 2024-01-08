@@ -5,11 +5,12 @@ import { HeaderComponent } from '../../header/header.component';
 import { DataService } from '../../services/data.service';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { Product } from '../../models/product';
+import { FooterComponent } from '../../footer/footer.component';
 
 @Component({
   selector: 'app-store-page',
   standalone: true,
-  imports: [CommonModule, ProductComponent, HeaderComponent, CartItemComponent],
+  imports: [CommonModule, ProductComponent, HeaderComponent, FooterComponent, CartItemComponent],
   templateUrl: './store-page.component.html',
   styleUrl: './store-page.component.css'
 })
@@ -20,8 +21,13 @@ export class StorePageComponent implements OnInit {
   @Input() storeId: number = 0;
 
   ngOnInit(): void {
+    // Took me 2 hours to find that even though in Typescript i have defined
+    // storeId as a number, it is still passed as a string from the router arguments :)))))
+    // and i have to cast it to a number 
+    this.storeId = +this.storeId;
     this.data_service.getStoreById(this.storeId).subscribe({
       next: (data) => {
+        console.log(data);
         this.storeInfo = data;
       }
     })

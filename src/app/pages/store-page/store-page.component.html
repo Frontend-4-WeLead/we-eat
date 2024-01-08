@@ -17,7 +17,7 @@
 		<div class="m-3">
 			<h4 class="my-4 mx-3">Products</h4>
 			@for (product of storeInfo.products; track $index) {
-			<app-product class="prod" [product]="{title:product.title,price:product.price}" [cart]="cart" />
+			<app-product class="prod" [product]="{title:product.name,price:product.price}" [cart]="cart" />
 			<br>
 			}
 
@@ -33,5 +33,3 @@
 		}
 	</div>
 </div>
-
-<footer>test footer</footer>
