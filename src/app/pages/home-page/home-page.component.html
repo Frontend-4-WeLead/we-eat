@@ -1,10 +1,15 @@
+
+<div class="d-flex justify-content-center search">
+  <input [(ngModel)]="searchTerm" type="text" placeholder="Αναζήτηση">
+  <button class="search-btn" (click)="searchStores()">Search</button>
+</div>
+
 <div class="container">
   <ul class="stores-categories-list">
     <li>Κατηγορία 1</li>
     <li>Κατηγορία 2</li>
     <li>Κατηγορία 3</li>
   </ul>
-
 
   <div class="card-deck stores-list">
     @for(f of famousStores; track $index){
@@ -18,12 +23,17 @@
     }
   </div>
 
-  <br />
+  <br>
+  <div class="d-flex justify-content-center">
+    <button routerLink="/store-item" [ngClass]="showStores ? 'active-btn' : ' ' " (click)="onButton()" class="btn btn-light m-2 rounded-pill">hello</button>
+  </div>
+  <br>
+  
 
   <div class="card-deck stores-list">
     @for(s of storesList; track $index){
 
-    <app-store-item [store]="s" class="store-item-wrapper"></app-store-item>
+    <app-store-item *ngIf="!showStores" [store]="s" class="store-item-wrapper"></app-store-item>
     <!-- <pre>{{storesList | json}}</pre> -->
 
     } @empty {
