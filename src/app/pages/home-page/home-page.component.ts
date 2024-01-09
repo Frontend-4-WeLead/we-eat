@@ -31,7 +31,7 @@ export class HomePageComponent {
 
   getAllStores() {
     this.service.getAllStores().subscribe({
-      next: res => console.log(res)
+      next: res => this.storesList = res
     })
   }
 
@@ -52,7 +52,7 @@ export class HomePageComponent {
   }
 
   public onButton() {
-    this.showStores = true
+    this.showStores = false
   }
 
 
