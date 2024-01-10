@@ -11,7 +11,14 @@
 		<!-- Store Image and Name -->
 		<div class="my_wrapper m-3">
 			<div class="row">
+				@if (storeInfo.image_url === undefined)
+				{
+				<img src="../assets/images/Placeholder_1920x1024.jpg" alt="`{{storeInfo.name}}`'s store image"
+					class="rounded-4">
+				}
+				@else {
 				<img [src]="storeInfo.image_url" alt="`{{storeInfo.name}}`'s store image" class="rounded-4">
+				}
 			</div>
 			<div class="bg-danger rounded-3 " id="store_name">
 				<p class="m-0">{{storeInfo.name}}</p>
@@ -30,6 +37,7 @@
 	</div>
 	<!-- Cart -->
 	<div class="col-3">
+		<h4 class="m-3">Cart</h4>
 		@for (item of cart; track $index)
 		{
 		<app-cart-item [product]="{title:item.title,price:item.price}" [cartIndex]="$index"
