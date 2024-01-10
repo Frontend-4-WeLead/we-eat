@@ -15,8 +15,6 @@ export class ProductComponent {
   @Input() product: Product = { title: "", price: 0 };
 
   addToCart() {
-    console.log(this.cart)
     this.cart.push(this.product)
-    console.log(this.cart)
   }
 }
