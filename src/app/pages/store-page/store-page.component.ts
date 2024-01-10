@@ -1,13 +1,13 @@
 import { Component, Input, NgModule, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from './components/product/product.component';
-import { HeaderComponent } from '../../header/header.component';
+import { HeaderComponent } from '../../components/header/header.component';
 import { DataService } from '../../services/data.service';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { Product } from '../../models/product';
-import { FooterComponent } from '../../footer/footer.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 import { Router } from '@angular/router';
-import { FileNotFoundComponent } from '../../file-not-found/file-not-found/file-not-found.component';
+import { FileNotFoundComponent } from '../file-not-found/file-not-found.component';
 
 
 @Component({
