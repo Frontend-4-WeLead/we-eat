@@ -1,5 +1,10 @@
 <!-- <app-header style="position: sticky; top: 0px; z-index: 100;" /> -->
 <!-- Main -->
+@if (storeInfo === undefined) {
+<app-file-not-found />
+}
+@else {
+
 <div class="row">
 	<!-- Store -->
 	<div class="col-8" style="margin-left: 2em;">
@@ -33,3 +38,4 @@
 		}
 	</div>
 </div>
+}
