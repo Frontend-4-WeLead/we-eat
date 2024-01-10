@@ -19,7 +19,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomePageComponent {
   storesList: any;
-  famousStores: FamousStore[] = [];
+  famousStoresList: FamousStore[] = [];
   service = inject(DataService);
   showStores = true;
 
@@ -37,7 +37,7 @@ export class HomePageComponent {
 
   getAllFamousStores() {
     this.service.getFamousStores().subscribe({
-      next: data => { this.famousStores = data; console.log(this.famousStores) }
+      next: data => { this.famousStoresList = data; console.log(this.famousStoresList) }
     })
   }
 
@@ -47,8 +47,8 @@ export class HomePageComponent {
   }
 
   searchStores() {
-    this.famousStores = this.famousStores.filter(s => s.name.toLowerCase().includes(this.searchTerm.toLowerCase()))
-    console.log(this.famousStores)
+    this.famousStoresList = this.famousStoresList.filter(s => s.name.toLowerCase().includes(this.searchTerm.toLowerCase()))
+    console.log(this.famousStoresList)
   }
 
   public onButton() {
