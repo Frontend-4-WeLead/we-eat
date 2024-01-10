@@ -22,6 +22,7 @@ export class LoginSignupPageComponent implements OnInit {
 
   public onButton2(){
     this.showLogin = false
+
   }
 
   ngOnInit() {
