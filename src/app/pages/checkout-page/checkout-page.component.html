@@ -1,1 +1,4 @@
-<p>checkout-page works!</p>
+@for (item of cart; track $index)
+{
+<app-product class="m-3" [product]="{title:item.title,price:item.price}" />
+}

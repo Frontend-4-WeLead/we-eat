@@ -1,12 +1,24 @@
 <!-- <app-header style="position: sticky; top: 0px; z-index: 100;" /> -->
 <!-- Main -->
+@if (storeInfo === undefined) {
+<app-file-not-found />
+}
+@else {
+
 <div class="row">
 	<!-- Store -->
 	<div class="col-8" style="margin-left: 2em;">
 		<!-- Store Image and Name -->
 		<div class="my_wrapper m-3">
 			<div class="row">
+				@if (storeInfo.image_url === undefined)
+				{
+				<img src="../assets/images/Placeholder_1920x1024.jpg" alt="`{{storeInfo.name}}`'s store image"
+					class="rounded-4">
+				}
+				@else {
 				<img [src]="storeInfo.image_url" alt="`{{storeInfo.name}}`'s store image" class="rounded-4">
+				}
 			</div>
 			<div class="bg-danger rounded-3 " id="store_name">
 				<p class="m-0">{{storeInfo.name}}</p>
@@ -17,7 +29,7 @@
 		<div class="m-3">
 			<h4 class="my-4 mx-3">Products</h4>
 			@for (product of storeInfo.products; track $index) {
-			<app-product class="prod" [product]="{title:product.name,price:product.price}" [cart]="cart" />
+			<app-product class="pointer" [product]="{title:product.name,price:product.price}" [cart]="cart" />
 			<br>
 			}
 
@@ -25,11 +37,17 @@
 	</div>
 	<!-- Cart -->
 	<div class="col-3">
+		<h4 class="m-3">Cart</h4>
 		@for (item of cart; track $index)
 		{
 		<app-cart-item [product]="{title:item.title,price:item.price}" [cartIndex]="$index"
 			(cartEmiter)="removeFromCart($event)" />
 		<br>
 		}
+		@if (cart.length != 0)
+		{
+		<div class="btn btn-primary" (click)="goToCheckout()">Finish</div>
+		}
 	</div>
 </div>
+}

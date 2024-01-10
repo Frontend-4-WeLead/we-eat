@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
 })
 export class SingUpPageComponent {
 applyForm!: FormGroup
+public message = "Σας ευχαριστούμε για την εγγραφή σας!";
 
 ngOnInit(): void {
   this.setFormValues();
@@ -25,4 +26,8 @@ ngOnInit(): void {
     password: new FormControl()
   });
  }
+
+ public onClick() {
+  alert(this.message);
+}
 }

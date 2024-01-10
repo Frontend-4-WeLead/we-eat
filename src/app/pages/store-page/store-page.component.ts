@@ -1,24 +1,33 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, Input, NgModule, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from './components/product/product.component';
-import { HeaderComponent } from '../../header/header.component';
+import { HeaderComponent } from '../../components/header/header.component';
 import { DataService } from '../../services/data.service';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { Product } from '../../models/product';
-import { FooterComponent } from '../../footer/footer.component';
+import { FooterComponent } from '../../components/footer/footer.component';
+import { Router } from '@angular/router';
+import { FileNotFoundComponent } from '../file-not-found/file-not-found.component';
+import { CartService } from '../../services/cart.service';
+
 
 @Component({
   selector: 'app-store-page',
   standalone: true,
-  imports: [CommonModule, ProductComponent, HeaderComponent, FooterComponent, CartItemComponent],
+  imports: [CommonModule, ProductComponent, HeaderComponent,
+    FooterComponent, CartItemComponent, FileNotFoundComponent],
   templateUrl: './store-page.component.html',
   styleUrl: './store-page.component.css'
 })
+
 export class StorePageComponent implements OnInit {
   storeInfo: any;
   data_service = inject(DataService)
+  cart_service = inject(CartService)
   cart: Array<Product> = [];
   @Input() storeId: number = 0;
+  router = inject(Router);
+
 
   ngOnInit(): void {
     // Took me 2 hours to find that even though in Typescript i have defined
@@ -27,7 +36,6 @@ export class StorePageComponent implements OnInit {
     this.storeId = +this.storeId;
     this.data_service.getStoreById(this.storeId).subscribe({
       next: (data) => {
-        console.log(data);
         this.storeInfo = data;
       }
     })
@@ -36,6 +44,11 @@ export class StorePageComponent implements OnInit {
     if (cartIndex > -1) {
       this.cart.splice(cartIndex, 1);
     }
+  }
+
+  goToCheckout() {
+    this.cart_service.publish(this.cart);
+    this.router.navigate(['/checkout']);
   }
 }
 

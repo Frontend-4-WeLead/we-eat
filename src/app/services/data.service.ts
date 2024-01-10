@@ -24,7 +24,6 @@ export class DataService {
   }
 
   getProductsById(id: number) {
-    console.log(id)
     return this.http.get<Store[]>(this.storesEndpointUrl).pipe(
       map((stores: Store[]) => stores.find(s => s.id === id)!['products'])
     )
