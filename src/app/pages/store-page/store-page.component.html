@@ -13,8 +13,7 @@
 			<div class="row">
 				@if (storeInfo.image_url === undefined)
 				{
-				<img src="../assets/images/Placeholder_1920x1024.jpg" alt="`{{storeInfo.name}}`'s store image"
-					class="rounded-4">
+				<img src="../assets/images/demo_img.jpg" alt="`{{storeInfo.name}}`'s store image" class="rounded-4">
 				}
 				@else {
 				<img [src]="storeInfo.image_url" alt="`{{storeInfo.name}}`'s store image" class="rounded-4">
