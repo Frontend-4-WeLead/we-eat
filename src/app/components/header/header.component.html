@@ -32,8 +32,27 @@
         </li>
       </ul>
 
-      <div class="user-profile">
-        <img class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" src="../../assets/images/header-profile-icon.png" ngClass="header-profile-img" />
+      <dialog #dialog>
+        <div id="login-container">
+            <div class="profile-img"></div>
+            <h1>
+              User
+            </h1>
+            <div class="description">
+              sevigouland.gmail.com
+              <br>
+              WeEat User ID: 54220374
+            </div>
+            <div class="social">
+              <a>Παραγγελίες</a>
+              <a>Αποσύνδεση</a>
+            </div>
+          </div>
+      </dialog>
+      <button type="button" class="btn_img" (click)="dialog.showModal()">
+        <img src="../../assets/images/header-profile-icon.png" width="50" height="50"> 
+       </button>
+
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="/user">User</a></li>
           <li><a class="dropdown-item" href="/orders">Orders</a></li>
@@ -41,8 +60,9 @@
           <li><a class="dropdown-item" href="/settings">Settings</a></li>
           <li><a class="dropdown-item" href="/login">Logout</a></li>
         </ul>
-      </div>
+      
 
     </div>
   </div>
 </nav>
+
