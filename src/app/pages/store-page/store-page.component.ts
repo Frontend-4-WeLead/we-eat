@@ -48,6 +48,7 @@ export class StorePageComponent implements OnInit {
 
   goToCheckout() {
     this.cart_service.publish(this.cart);
+    console.log(this.cart);
     this.router.navigate(['/checkout']);
   }
 }

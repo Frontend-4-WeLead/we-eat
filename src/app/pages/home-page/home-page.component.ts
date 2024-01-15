@@ -48,6 +48,7 @@ export class HomePageComponent {
     })
   }
 
+
   ngOnInit() {
     this.getAllStores();
     this.getAllFamousStores();
@@ -59,6 +60,7 @@ export class HomePageComponent {
     this.filteredPopularStoresList = this.filteredPopularStoresList.filter(p_store => p_store.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || p_store.category.toLowerCase().includes(this.searchTerm.toLowerCase()));
     this.filteredStoresList = this.filteredStoresList.filter(store => store.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || store.category.toLowerCase().includes(this.searchTerm.toLowerCase()))
   }
+
 
   public onButton() {
     this.showStores = false

@@ -32,14 +32,36 @@
         </li>
       </ul>
 
-      <dialog #dialog>
+      <dialog  #dialog>
         <div id="login-container">
             <div class="profile-img"></div>
             <h1>
-              User
+              
             </h1>
-            <div class="description">
+            <div *ngIf="users.length" class="description">
               sevigouland.gmail.com
+              {{users[0].id}}
+              
+              @for(order of users[0].order_list; track $index){
+                <div class="row">
+                  <h4>{{order.order_date}}-{{order.store}}</h4>
+            
+                  @for(product of order.product_list; track $index) {
+                    {{product.quantity}}
+                  }
+
+                </div>
+                 
+              }
+
+
+
+
+              @for(f of users[0].address_list; track $index){
+                  {{f.number}}
+                }
+
+             
               <br>
               WeEat User ID: 54220374
             </div>

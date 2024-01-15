@@ -22,7 +22,8 @@ export interface Product {
    /*  image_url: string;
     ingredients: string[];
     allergenic: string;
-    calories: number; */
+    calories: number;*/
+    quantity: number;
 }
 
 /* export interface StoreCategory {
