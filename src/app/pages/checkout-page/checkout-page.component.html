@@ -1,4 +1,6 @@
+<!-- Main -->
 <div class="row d-flex  justify-content-center">
+	<!-- Cart -->
 	<div class="m-3 col-4 border border-1 border-dark rounded-4">
 
 		@for (item of cart; track $index)
@@ -6,11 +8,14 @@
 		<app-product class="m-3" [product]="{title:item.title,price:item.price}" />
 		}
 	</div>
+	<!-- Final step before purchase -->
 	<div class="d-flex flex-column justify-content-between m-3 col-4 border border-1 border-black rounded-4 ">
+		<!-- Total Box -->
 		<div class="m-5">
 			<h3 class="my-4">Your total:</h3>
 			<h1>{{total}}€</h1>
 		</div>
+		<!-- Complete Purchase button -->
 		<div class="btn btn-primary m-5">Complete Purchase</div>
 	</div>
 </div>
