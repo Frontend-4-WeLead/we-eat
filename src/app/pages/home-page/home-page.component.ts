@@ -2,24 +2,25 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../services/data.service';
 import { StoreItemComponent } from '../../components/store-item/store-item.component';
-import { FamousStore } from '../../models/famous_store';
-import { MostFamousStoresComponent } from '../store-page/components/most-famous-stores/most-famous-stores.component';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { SearchPageComponent } from '../search-page/search-page.component';
 import { FormsModule } from '@angular/forms';
+import { Store } from '../../models/store';
 
 
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet, StoreItemComponent, MostFamousStoresComponent, SearchPageComponent, FormsModule],
+  imports: [CommonModule, RouterLink, RouterOutlet, StoreItemComponent, SearchPageComponent, FormsModule],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
 export class HomePageComponent {
-  storesList: any;
-  famousStoresList: FamousStore[] = [];
+  storesList: Store[] = [];
+  popularStoresList: Store[] = [];
+  filteredStoresList: Store[] = [];
+  filteredPopularStoresList: Store[] = [];
   service = inject(DataService);
   showStores = true;
 
@@ -31,13 +32,19 @@ export class HomePageComponent {
 
   getAllStores() {
     this.service.getAllStores().subscribe({
-      next: res => this.storesList = res
+      next: res => {
+        this.storesList = res;
+        this.filteredStoresList = [...this.storesList];
+      }
     })
   }
 
   getAllFamousStores() {
     this.service.getFamousStores().subscribe({
-      next: data => { this.famousStoresList = data; console.log(this.famousStoresList) }
+      next: data => { 
+        this.popularStoresList = data; 
+        this.filteredPopularStoresList = [...this.popularStoresList];
+      }
     })
   }
 
@@ -47,12 +54,23 @@ export class HomePageComponent {
   }
 
   searchStores() {
-    this.famousStoresList = this.famousStoresList.filter(s => s.name.toLowerCase().includes(this.searchTerm.toLowerCase()))
-    console.log(this.famousStoresList)
+    this.filteredStoresList = [...this.storesList];
+    this.filteredPopularStoresList = [...this.popularStoresList];
+    this.filteredPopularStoresList = this.filteredPopularStoresList.filter(p_store => p_store.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || p_store.category.toLowerCase().includes(this.searchTerm.toLowerCase()));
+    this.filteredStoresList = this.filteredStoresList.filter(store => store.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || store.category.toLowerCase().includes(this.searchTerm.toLowerCase()))
   }
 
   public onButton() {
     this.showStores = false
+  }
+
+  filterByCategory(category_name:string) {        
+    this.filteredStoresList = [...this.storesList];
+    this.filteredPopularStoresList = [...this.popularStoresList];
+
+    this.filteredPopularStoresList = this.filteredPopularStoresList.filter((p_store) => p_store.category === category_name);    
+    this.filteredStoresList = this.filteredStoresList.filter((store) => store.category === category_name);
+
   }
 
 

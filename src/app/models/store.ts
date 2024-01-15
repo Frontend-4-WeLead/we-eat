@@ -1,6 +1,7 @@
 export interface Store {
     id: number;
     name: string;
+    category: string;
     address: string;
     rating: number;
     image_url: string;
@@ -9,21 +10,22 @@ export interface Store {
     opening_hour: number;
     closing_hour: number;
     products: Product[];
-    storeCategories: StoreCategory[];
+    /* storeCategories: StoreCategory[]; */
 }
 
 export interface Product {
     id: number;
-    title: string;
+    name: string;
+    /* title: string; */
     category: string;
     price: number;
-    image_url: string;
+   /*  image_url: string;
     ingredients: string[];
     allergenic: string;
-    calories: number;
+    calories: number; */
 }
 
-export interface StoreCategory {
+/* export interface StoreCategory {
     id: number;
     title: string;
-}
+} */

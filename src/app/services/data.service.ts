@@ -14,7 +14,7 @@ export class DataService {
   storesEndpointUrl = "../assets/sample-data/stores.json";
 
   getAllStores() {
-    return this.http.get(this.storesEndpointUrl)
+    return this.http.get<Store[]>(this.storesEndpointUrl)
   }
 
   getStoreById(id: number) {
@@ -29,6 +29,6 @@ export class DataService {
     )
   }
   getFamousStores() {
-    return this.http.get<FamousStore[]>(this.famousEndpointUrl);
+    return this.http.get<Store[]>(this.famousEndpointUrl);
   }
 }

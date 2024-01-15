@@ -1,3 +1,8 @@
+.secondary-title{
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
 /*categories list*/
 ul.stores-categories-list {
     display: flex;
@@ -14,6 +19,46 @@ ul.stores-categories-list>li {
     display: inline-block;
     padding: 2px 6px;
     font-size: 16px;
+}
+
+.category-button{
+    border: none;
+    background: transparent;
+    position: relative;
+    --iconsize:30px;
+    /* padding-left: calc(var(--iconsize) + 5px); */
+    display: inline-flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.category-button::before{
+    content: "";
+    width: var(--iconsize);
+    height: var(--iconsize);
+    display: inline-block;
+}
+
+.category-button.c-coffee::before{
+    background: url(/assets/images/stores-categories-icons/coffee-48.png) no-repeat;
+    background-size: contain;
+}
+
+
+.category-button.c-fast-food::before{
+    background: url(/assets/images/stores-categories-icons/burrito-48.png) no-repeat;
+    background-size: contain;
+}
+
+
+.category-button.c-pizza::before{
+    background: url(/assets/images/stores-categories-icons/salami-pizza-48.png) no-repeat;
+    background-size: contain;
+}
+
+.category-button.c-asian::before{
+    background: url(/assets/images/stores-categories-icons/rice-bowl-48.png) no-repeat;
+    background-size: contain;
 }
 
 /*stores list*/

@@ -1,39 +1,38 @@
-
-<div class="d-flex justify-content-center search">
-  <input [(ngModel)]="searchTerm" type="text" placeholder="Αναζήτηση">
-  <button class="search-btn" (click)="searchStores()">Search</button>
-</div>
-
 <div class="container">
+
+  <div class="d-flex justify-content-center search">
+    <input [(ngModel)]="searchTerm" type="text" placeholder="Αναζήτηση">
+    <button class="search-btn" (click)="searchStores()">Search</button>
+  </div>
+
   <ul class="stores-categories-list">
-    <li>Κατηγορία 1</li>
-    <li>Κατηγορία 2</li>
-    <li>Κατηγορία 3</li>
+    <li><button (click)="filterByCategory('COFFEE')" class="category-button c-coffee">Καφές</button></li>
+    <li><button (click)="filterByCategory('FAST_FOOD')" class="category-button c-fast-food">Fast food</button></li>
+    <li><button (click)="filterByCategory('PIZZA')" class="category-button c-pizza">Pizza</button></li>    
+    <li><button (click)="filterByCategory('ASIAN')" class="category-button c-asian">Asian</button></li>
   </ul>
 
-  <div class="card-deck stores-list">
-    @for(f of famousStoresList; track $index){
+  <h2 class="secondary-title">Δημοφιλή καταστήματα</h2>
+
+  <div class="card-deck stores-list popular-stores-list">
+    @for(p of filteredPopularStoresList; track $index){
 
     <!-- <app-most-famous-stores [famousStores]="f"></app-most-famous-stores> -->
-    <app-store-item [store]="f" class="store-item-wrapper"></app-store-item>
+    <app-store-item [store]="p" class="store-item-wrapper"></app-store-item>
 
-    } @empty {
+    } <!-- @empty {
     <div class="empty-list">
-      <h2>No shops available....</h2>
+      <h2>No famous shops available....</h2>
     </div>
-    }
+    } -->
   </div>
 
-  <br>
-  <div class="d-flex justify-content-center">
-    <button [ngClass]="showStores ? 'active-btn' : ' ' " (click)="onButton()" class="btn btn-light m-2 rounded-pill">Show more</button>
-  </div>
-  <br>
+  <h2 class="secondary-title">Επιπλέον καταστήματα</h2>
 
   <div class="card-deck stores-list">
-    @for(s of storesList; track $index){
+    @for(s of filteredStoresList; track $index){
 
-    <app-store-item *ngIf="!showStores" [store]="s" class="store-item-wrapper"></app-store-item>
+    <app-store-item [store]="s" class="store-item-wrapper"></app-store-item>
     <!-- <pre>{{storesList | json}}</pre> -->
 
     } @empty {
