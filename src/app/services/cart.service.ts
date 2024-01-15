@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  private publisher = new BehaviorSubject<any>({});
+  private publisher = new BehaviorSubject<Product[]>([]);
 
-  publish(data: any) {
+  publish(data: Product[]) {
     this.publisher.next(data);
   }
 
