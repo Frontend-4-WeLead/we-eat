@@ -13,7 +13,8 @@
 			<div class="row">
 				@if (storeInfo.image_url === undefined)
 				{
-				<img src="../assets/images/demo_img.jpg" alt="`{{storeInfo.name}}`'s store image" class="rounded-4">
+				<img src="../assets/images/demo_img.jpg" alt="`{{storeInfo.name}}`'s store image failed to load"
+					class="rounded-4">
 				}
 				@else {
 				<img [src]="storeInfo.image_url" alt="`{{storeInfo.name}}`'s store image" class="rounded-4">
@@ -35,18 +36,26 @@
 		</div>
 	</div>
 	<!-- Cart -->
-	<div class="col-3">
-		<h4 class="m-3">Cart</h4>
-		@for (item of cart; track $index)
-		{
-		<app-cart-item [product]="{title:item.title,price:item.price}" [cartIndex]="$index"
-			(cartEmiter)="removeFromCart($event)" />
-		<br>
-		}
-		@if (cart.length != 0)
-		{
-		<div class="btn btn-primary" (click)="goToCheckout()">Proceed to Checkout</div>
-		}
+	<div class="col-3 m-3 ">
+		<div class="border border-1 border-black rounded-3 p-3">
+
+			<h4 class="">Cart</h4>
+			@if (cart.length == 0)
+			{
+			<h5 class="my-4">Your cart is empty.<br>Please add Items.</h5>
+			}
+			@else {
+			<br>
+			@for (item of cart; track $index)
+			{
+			<app-cart-item [product]="{title:item.title,price:item.price}" [cartIndex]="$index"
+				(cartEmiter)="removeFromCart($event)" />
+			<br>
+			}
+			<br>
+			<div class="btn btn-primary" (click)="goToCheckout()">Proceed to Checkout</div>
+			}
+		</div>
 	</div>
 </div>
 }
