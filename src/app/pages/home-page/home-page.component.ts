@@ -41,6 +41,7 @@ export class HomePageComponent {
     })
   }
 
+
   ngOnInit() {
     this.getAllStores();
     this.getAllFamousStores();
@@ -50,6 +51,7 @@ export class HomePageComponent {
     this.famousStoresList = this.famousStoresList.filter(s => s.name.toLowerCase().includes(this.searchTerm.toLowerCase()))
     console.log(this.famousStoresList)
   }
+
 
   public onButton() {
     this.showStores = false

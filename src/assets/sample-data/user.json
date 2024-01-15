@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "firstName": "Paris",
+        "lastName": "Kalofagas",
+        "image_url": "https://images.unsplash.com/photo-1640951613773-54706e06851d?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "order_list": [
+            {
+                "id": 5,
+                "store": "McDonald's",
+                "order_date": "02/01/2024",
+                "product_list": [
+                    {
+                        "quantity":"2",
+                        "product": "Big Mac",
+                        "price": 9.98
+                    },
+                    {
+                        "quantity":"1",
+                        "product": "Deluxe Burger",
+                        "price": 2.99
+                    }
+                ]
+            }
+        ],
+        "address_list": [
+            {
+                "street": "Velestinou",
+                "number": "8",
+                "district": "Ampelokhpoi",
+                "city": "Athens"
+            },
+            {
+                "street": "Kefallinias",
+                "number": "76",
+                "district": "Kipseli",
+                "city": "Athens"
+            }
+        ]
+    }
+]
