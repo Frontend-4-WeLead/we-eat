@@ -45,7 +45,7 @@
               @for(order of users[0].order_list; track $index){
                 <div class="row">
                   <h4>{{order.order_date}}-{{order.store}}</h4>
-                  
+            
                   @for(product of order.product_list; track $index) {
                     {{product.quantity}}
                   }
