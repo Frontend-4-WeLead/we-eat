@@ -1,4 +1,3 @@
-import { Product } from "./store";
 
 export interface User {
     id: number;
@@ -23,8 +22,8 @@ export interface Address {
     city: string;
 }
 
-// export interface Product {
-//     quantity: string;
-//     product: string;
-//     total_price: number;
-// }
+export interface Product {
+    quantity: string;
+    product: string;
+    total_price: number;
+}

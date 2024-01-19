@@ -23,7 +23,6 @@ export interface Product {
     ingredients: string[];
     allergenic: string;
     calories: number;*/
-    quantity: number;
 }
 
 /* export interface StoreCategory {

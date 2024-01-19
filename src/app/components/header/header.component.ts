@@ -7,6 +7,7 @@ import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 
 
+
 @Component({
     selector: 'app-header',
     standalone: true,
@@ -17,13 +18,13 @@ import { User } from '../../models/user';
 export class HeaderComponent {
     service = inject(UserService);
     users: User[] = [];
-    
+   
     getUser(){
         this.service.getUser().subscribe({
             next: res => {this.users = res; console.log(this.users)}
         })
     }
-
+    
     ngOnInit(){
         this.getUser();
     }
@@ -36,8 +37,6 @@ export class HeaderComponent {
     }
 
     searchFor(searchValue: string): void {
-     
-        
     }
 
 }
