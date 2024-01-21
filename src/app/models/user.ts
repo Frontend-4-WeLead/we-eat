@@ -1,8 +1,9 @@
 
 export interface User {
     id: number;
-    fisrtName: string;
+    firstName: string;
     lastName: string;
+    email: string;
     image_url: string;
     order_list: Order[];
     address_list: Address[];
@@ -13,6 +14,8 @@ export interface Order {
     store: string;
     order_date: string;
     product_list: Product[];
+    total_price: number;
+
 }
 
 export interface Address {
@@ -24,6 +27,5 @@ export interface Address {
 
 export interface Product {
     quantity: string;
-    product: string;
-    total_price: number;
+    name: string;
 }

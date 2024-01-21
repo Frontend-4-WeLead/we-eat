@@ -1,0 +1,54 @@
+    #login-container {
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  }
+
+  .img {
+    display: flex;
+    justify-content: center;
+  }
+
+    .profile-img {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+  
+    h5 {
+       font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       text-align: center; 
+       margin-bottom: 20px; 
+     
+    }
+
+    .description {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .order {
+      font-size: 13px;
+      color: var(--greytxt);
+    }
+  
+    /* .social {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: calc(100% - 40px);
+      margin: 0 auto;
+      a {
+        text-align: center;
+        width: 75px;
+        padding: 5px 0;
+        border-radius: 5px;
+        &:hover {
+          
+          color: red;
+          cursor: pointer;
+        }
+      }
+    } */
+  
+  

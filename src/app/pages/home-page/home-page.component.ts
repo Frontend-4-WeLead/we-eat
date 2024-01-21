@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../services/data.service';
 import { StoreItemComponent } from '../../components/store-item/store-item.component';
-import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { SearchPageComponent } from '../search-page/search-page.component';
 import { FormsModule } from '@angular/forms';
 import { Store } from '../../models/store';
@@ -27,7 +27,7 @@ export class HomePageComponent {
   searchTerm!: string;
 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router:Router) { }
 
 
   getAllStores() {
@@ -47,7 +47,6 @@ export class HomePageComponent {
       }
     })
   }
-
 
   ngOnInit() {
     this.getAllStores();

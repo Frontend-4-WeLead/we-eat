@@ -1,0 +1,80 @@
+<!-- <div id="login-container">
+      <div class="img">
+        <img class="profile-img" [src]="users[0].image_url" alt="user-image">
+      </div>
+      <h5>{{users[0].fisrtName}} , {{users[0].lastName}}</h5>
+      <div *ngIf="users.length" class="description">
+        sevigouland.gmail.com
+        {{ users[0].id }}
+
+        @for(order of users[0].order_list; track $index){
+        <div class="row">
+          <h4>{{ order.order_date }}-{{ order.store }}</h4>
+
+          @for(product of order.product_list; track $index) {
+          {{ product.quantity }}
+          }
+        </div>
+
+        } @for(u of users[0].address_list; track $index){
+        {{ u.number }}
+        }
+
+        <br />
+        WeEat User ID: 54220374
+      </div>
+      <div class="social">
+        <a>Παραγγελίες</a>
+        <a>Αποσύνδεση</a>
+      </div>
+    </div> -->
+
+
+  
+    <div class="img">
+      <img class="profile-img" [src]="users[0].image_url" alt="user-image" />
+    </div>
+
+    <div class="card-body">
+      <div class="d-flex justify-content-around">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Όνομα</strong></li>
+          <li class="list-group-item"><strong>Επίθετο</strong></li>
+          <li class="list-group-item"><strong>Email</strong></li>
+        </ul>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong>{{ users[0].firstName }}</strong>
+          </li>
+          <li class="list-group-item">
+            <strong>{{ users[0].lastName }}</strong>
+          </li>
+          <li class="list-group-item">
+            <strong>{{ users[0].email}}</strong>
+          </li>
+        </ul>
+      </div>
+     
+      <div class="d-flex justify-content-center" style="margin-top: 22px; margin-bottom: 22px; color: green;"><strong><u>Οι παραγγελίες μου</u></strong></div>
+
+      @for(order of users[0].order_list; track $index){
+      <div>
+        
+        <div class="d-flex ">
+        
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>{{order.store}}</strong></li>
+            <li class="list-group-item order">{{order.order_date}}
+            <li class="list-group-item order">
+            @for(product of order.product_list; track $index) {
+              {{product.quantity}}x {{product.name}},
+            } 
+          </li>
+            <li class="list-group-item order">Total price: {{order.total_price}}€</li>
+          </ul>
+      </div>
+      </div>
+      }
+    </div>
+  
+
