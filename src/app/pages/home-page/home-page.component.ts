@@ -7,8 +7,6 @@ import { SearchPageComponent } from '../search-page/search-page.component';
 import { FormsModule } from '@angular/forms';
 import { Store } from '../../models/store';
 
-
-
 @Component({
   selector: 'app-home-page',
   standalone: true,
