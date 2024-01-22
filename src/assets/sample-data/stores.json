@@ -4,6 +4,7 @@
         "name": "McDonald's",
         "category": "FAST_FOOD",
         "address": "Syntagma 15",
+        "rating":4.7,
         "products": [
             {
                 "id": "1",
@@ -72,6 +73,7 @@
         "name": "StreetWok",
         "category": "ASIAN",
         "address": "Glyfada Str. 203",
+        "rating":4.3,
         "products": [
             {
                 "id": "11",
@@ -116,6 +118,7 @@
         "name": "Nanou Donuts House",
         "category": "DONUTS",
         "address": "Ampelokipous 23rd Av.",
+        "rating":4.3,
         "products": [
             {
                 "id": "17",
@@ -160,57 +163,66 @@
         "name": "Pizza Fan",
         "category": "PIZZA",
         "address": "Ippokrateiou 35",
-        "img_url": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4076041/cover?t=1647428522&platform=web" 
+        "img_url": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4076041/cover?t=1647428522&platform=web" ,
+        "rating":4.3
     },
     {
         "id": 8,
         "name": "Roma Pizza",
         "category": "PIZZA",
         "address": "Menelaou 22",
-        "img_url": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4076041/cover?t=1647428522&platform=web" 
+        "img_url": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4076041/cover?t=1647428522&platform=web" ,
+        "rating":4.2
     },
     {
         "id": 105,
         "name": "Goodys Burger House",
         "category": "FAST_FOOD",
-        "address": "Ampelokipous 23rd Av."
+        "address": "Ampelokipous 23rd Av.",
+        "rating":3.9
     },
     {
         "id": 80,
         "name": "The Big Bad Wolf",
         "category": "SOUVLAKI",
-        "address": "Agioi Anargiroi 98" 
+        "address": "Agioi Anargiroi 98" ,
+        "rating":4.8
     },
     {
         "id": 34,
         "name": "Mikel",
         "category": "COFFEE",
-        "address": "Ampelokipoi 72" 
+        "address": "Ampelokipoi 72" ,
+        "rating":5.0
     },
   
     {
         "id": 5,
         "name": "Gregory",
         "category": "COFFEE",
-        "address": "Agisilaou 222" 
+        "address": "Agisilaou 222" ,
+        "rating":4.9
     },
   
     {
         "id": 18,
         "name": "FoodTek",
         "category": "OTHER",
-        "address": "Ioanninon 14" 
+        "address": "Ioanninon 14" ,
+        "rating":4.3
     },
     {
         "id": 15,
         "name": "Cultivos Coffee",
         "category": "COFFEE",
-        "address": "Panormou 48"
+        "address": "Panormou 48",
+        "rating":4.5
     },
     {
         "id": 4,
         "name": "Coffee Lab",
         "category": "COFFEE",
-        "address": "Athinaion 15" 
+        "address": "Athinaion 15" ,
+        "rating":4.6
     }
 ]
