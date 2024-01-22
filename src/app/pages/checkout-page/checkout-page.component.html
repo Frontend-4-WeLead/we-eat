@@ -13,9 +13,13 @@
 		<!-- Total Box -->
 		<div class="m-5">
 			<h3 class="my-4">Your total:</h3>
-			<h1>{{total}}€</h1>
+			<h1>{{total.toFixed(2)}}€</h1>
+		</div>
+		<div class="mx-5">
+			<h6>Delivered at your location:</h6>
+			<h4>sample address</h4>
 		</div>
 		<!-- Complete Purchase button -->
-		<div class="btn btn-primary m-5">Complete Purchase</div>
+		<div class="btn btn-primary m-5" (click)="completePurchase()">Complete Purchase</div>
 	</div>
 </div>
