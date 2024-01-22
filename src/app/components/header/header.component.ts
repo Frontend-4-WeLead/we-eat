@@ -16,6 +16,8 @@ import { AddressService } from '../../services/address.service';
 })
 export class HeaderComponent implements OnInit {
 
+  selectedAddress: string = '';
+
   constructor(private router: Router, private readonly _modalService: ModalService, private addressService: AddressService) { }
 
   ngOnInit() {
@@ -39,5 +41,6 @@ export class HeaderComponent implements OnInit {
 
   selectAddress(address: string) {
       this.addressService.publish(address);
+      this.selectedAddress = address;
   }
 }

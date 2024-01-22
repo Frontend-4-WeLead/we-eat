@@ -1,58 +1,42 @@
-<nav
-  class="navbar navbar-expand-lg bg-body-tertiary"
-  *ngIf="!isLoginOrSignUpPage()"
->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" *ngIf="!isLoginOrSignUpPage()">
   <div class="container-fluid">
     <a class="navbar-brand" href="/stores">
-      <img
-        src="../../assets/images/we-eat-logo.png"
-        alt="Logo"
-        ngClass="header-logo-img"
-      />
+      <img src="../../assets/images/we-eat-logo.png" alt="Logo" ngClass="header-logo-img" />
     </a>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/stores"
-            >Stores</a
-          >
+          <a class="nav-link active" aria-current="page" href="/stores">Stores</a>
         </li>
         <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Address
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" (click)="selectAddress('Ipirou 1')">Ipirou 1</a></li>
-            <li><a class="dropdown-item" (click)="selectAddress('Ipirou 2')">Ipirou 2</a></li>
-            <li><a class="dropdown-item" (click)="selectAddress('Ipirou 3')">Ipirou 3</a></li>
+            <li>
+              <button class="dropdown-item" [ngClass]="{'selected': selectedAddress === 'Ipirou 1'}"
+                (click)="selectAddress('Ipirou 1')">Ipirou 1</button>
+            </li>
+            <li>
+              <button class="dropdown-item" [ngClass]="{'selected': selectedAddress === 'Ipirou 2'}"
+                (click)="selectAddress('Ipirou 2')">Ipirou 2</button>
+            </li>
+            <li>
+              <button class="dropdown-item" [ngClass]="{'selected': selectedAddress === 'Ipirou 3'}"
+                (click)="selectAddress('Ipirou 3')">Ipirou 3</button>
+            </li>
           </ul>
         </li>
       </ul>
 
       <button type="button" class="btn_img" (click)="showModal()">
-        <img
-          src="../../assets/images/header-profile-icon.png"
-          width="50"
-          height="50"
-        />
+        <img src="../../assets/images/header-profile-icon.png" width="50" height="50" />
       </button>
 
       <ul class="dropdown-menu">
