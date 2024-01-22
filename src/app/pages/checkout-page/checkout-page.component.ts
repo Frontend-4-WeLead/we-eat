@@ -67,8 +67,12 @@ export class CheckoutPageComponent implements OnInit {
       `Thank you for choosing us!`);
 
     this.router.navigate(['/stores']); */
-    this.orderCompleted=true;
-    
+    if (this.cart && this.cart.length > 0) {
+      this.orderCompleted=true;
+    }
+    /* else{
+      alert('Empty cart')
+    } */
 
   }
 }
