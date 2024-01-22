@@ -1,6 +1,8 @@
 <div class="card store-card-item">
     <a [routerLink]="['/stores', store.id]" class="store-card-item-link-wrapper">
-        <img class="card-img-top" [src]="store.img_url ? store.img_url : '/assets/images/demo_img.jpg'" [alt]="store.category">
+        <div class="card-img-wrapper">
+            <img class="card-img-top" [src]="store.img_url ? store.img_url : '/assets/images/demo_img.jpg'" [alt]="store.category">
+        </div>
         <div class="card-body">
             <div class="card-body-inner">
                 <div class="store-logo">
@@ -11,7 +13,7 @@
                     <div class="store-category">{{store.category}}</div>
                     <div class="store-info-bottom">
                         <div class="store-delivery-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 10' - 20'</div>
-                        <div class="store-rating"><i class="fa fa-star" aria-hidden="true"></i> {{store.rating}}</div>
+                        <div class="store-rating"><i class="fa fa-star" aria-hidden="true"></i> {{store.rating || '-'}}</div>
                     </div>
                 </div>
             </div>            

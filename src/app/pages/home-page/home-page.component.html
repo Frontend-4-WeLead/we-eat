@@ -1,19 +1,19 @@
-<div class="container">
+<div class="container home-page-container">
 
-  <div class="d-flex justify-content-center search">
-    <input #s [(ngModel)]="searchTerm" type="text" placeholder="Αναζήτηση"
-     (keyup.enter)="searchStores()" >
-    <button class="search-btn" (click)="searchStores()">Search</button>
+  <div class="search-wrapper">
+    <input #s [(ngModel)]="searchTerm" type="text" placeholder="Αναζητήσε καταστήματα" (keyup.enter)="searchStores()" >
+    <button class="search-btn" (click)="searchStores()"><i class="fa fa-search" aria-hidden="true"></i><span class="btn-txt">Αναζήτηση</span></button>
   </div>
 
   <ul class="stores-categories-list">
-    <li><button (click)="filterByCategory('COFFEE')" class="category-button c-coffee">Καφές</button></li>
-    <li><button (click)="filterByCategory('FAST_FOOD')" class="category-button c-fast-food">Fast food</button></li>
-    <li><button (click)="filterByCategory('PIZZA')" class="category-button c-pizza">Pizza</button></li>    
-    <li><button (click)="filterByCategory('ASIAN')" class="category-button c-asian">Asian</button></li>
+    <li><button (click)="filterByCategory('ALL')" [class.active]="selectedCategory === 'ALL'" class="category-button c-all" >Όλες οι κατηγορίες</button></li>
+    <li><button (click)="filterByCategory('COFFEE')" [class.active]="selectedCategory === 'COFFEE'" class="category-button c-coffee">Καφές</button></li>
+    <li><button (click)="filterByCategory('FAST_FOOD')" [class.active]="selectedCategory === 'FAST_FOOD'" class="category-button c-fast-food">Fast food</button></li>
+    <li><button (click)="filterByCategory('PIZZA')" [class.active]="selectedCategory === 'PIZZA'" class="category-button c-pizza">Pizza</button></li>    
+    <li><button (click)="filterByCategory('ASIAN')" [class.active]="selectedCategory === 'ASIAN'" class="category-button c-asian">Asian</button></li>
   </ul>
 
-  <h2 class="secondary-title">Δημοφιλή καταστήματα</h2>
+  <h2 class="secondary-title" *ngIf="famousStoresLength !== 0">Δημοφιλή καταστήματα</h2>
 
   <div class="card-deck stores-list popular-stores-list">
     @for(p of filteredPopularStoresList; track $index){
@@ -28,7 +28,7 @@
     } -->
   </div>
 
-  <h2 class="secondary-title">Επιπλέον καταστήματα</h2>
+  <h2 class="secondary-title" *ngIf="storesLength !== 0">Επιπλέον καταστήματα</h2>
 
   <div class="card-deck stores-list">
     @for(s of filteredStoresList; track $index){
@@ -36,10 +36,14 @@
     <app-store-item [store]="s" class="store-item-wrapper"></app-store-item>
     <!-- <pre>{{storesList | json}}</pre> -->
 
-    } @empty {
+    } <!-- @empty {
     <div class="empty-list">
       <h2>No shops available....</h2>
     </div>
-    }
+    } -->
+  </div>
+
+  <div class="empty-stores-list" *ngIf="storesLength == 0 && famousStoresLength == 0">
+    <h2 class="secondary-title"> Δεν βρέθηκαν καταστήματα</h2>
   </div>
 </div>

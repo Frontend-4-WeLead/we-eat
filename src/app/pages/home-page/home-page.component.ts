@@ -23,6 +23,9 @@ export class HomePageComponent {
   filteredPopularStoresList: Store[] = [];
   service = inject(DataService);
   showStores = true;
+  selectedCategory: string = 'ALL';
+  storesLength: number = 0;
+  famousStoresLength: number = 0;
 
   searchTerm!: string;
 
@@ -35,6 +38,7 @@ export class HomePageComponent {
       next: res => {
         this.storesList = res;
         this.filteredStoresList = [...this.storesList];
+        this.storesLength= this.filteredStoresList.length;
       }
     })
   }
@@ -44,6 +48,8 @@ export class HomePageComponent {
       next: data => { 
         this.popularStoresList = data; 
         this.filteredPopularStoresList = [...this.popularStoresList];
+        
+        this.famousStoresLength= this.filteredPopularStoresList.length;
       }
     })
   }
@@ -58,6 +64,9 @@ export class HomePageComponent {
     this.filteredPopularStoresList = [...this.popularStoresList];
     this.filteredPopularStoresList = this.filteredPopularStoresList.filter(p_store => p_store.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || p_store.category.toLowerCase().includes(this.searchTerm.toLowerCase()));
     this.filteredStoresList = this.filteredStoresList.filter(store => store.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || store.category.toLowerCase().includes(this.searchTerm.toLowerCase()))
+    
+    this.storesLength= this.filteredStoresList.length;
+    this.famousStoresLength= this.filteredPopularStoresList.length;
   }
 
 
@@ -68,9 +77,19 @@ export class HomePageComponent {
   filterByCategory(category_name:string) {        
     this.filteredStoresList = [...this.storesList];
     this.filteredPopularStoresList = [...this.popularStoresList];
+    this.selectedCategory = category_name;
+    if (category_name=='ALL'){
+      
+      this.storesLength= this.filteredStoresList.length;
+      this.famousStoresLength= this.filteredPopularStoresList.length;
+      return;
+    }
 
     this.filteredPopularStoresList = this.filteredPopularStoresList.filter((p_store) => p_store.category === category_name);    
     this.filteredStoresList = this.filteredStoresList.filter((store) => store.category === category_name);
+    
+    this.storesLength= this.filteredStoresList.length;
+    this.famousStoresLength= this.filteredPopularStoresList.length;
 
   }
 

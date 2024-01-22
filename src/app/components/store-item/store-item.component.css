@@ -3,6 +3,22 @@
     border: none;
 }
 
+.card.store-card-item  .card-img-wrapper {
+    height: 0;
+    --aspect-ratio: 1.6;
+    padding-top: calc(100%/(var(--aspect-ratio)));
+    position: relative;
+}
+
+.card.store-card-item .card-img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .store-card-item a.store-card-item-link-wrapper {
     color: inherit;
 }
@@ -10,6 +26,10 @@
 .store-card-item .card-title {
     font-size: 18px;
     font-weight: 700;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .store-card-item .card-body-inner {

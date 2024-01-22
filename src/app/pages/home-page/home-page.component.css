@@ -1,7 +1,26 @@
+.home-page-container{
+    margin-bottom: 70px;
+}
+
 .secondary-title{
     margin-top: 40px;
     margin-bottom: 25px;
     font-size: 24px;
+}
+
+.empty-stores-list{
+    text-align: center;
+}
+
+/*filters*/
+button.category-button {
+    border-radius: 5px;
+    transition: 0.3s;
+    padding-right: 10px;
+}
+
+button.category-button.active {
+    background: var(--greybg);
 }
 /*categories list*/
 ul.stores-categories-list {
@@ -39,6 +58,11 @@ ul.stores-categories-list>li {
     display: inline-block;
 }
 
+.category-button.c-all::before{
+    background: url(/assets/images/stores-categories-icons/fork-knife-48.png) no-repeat;
+    background-size: contain;
+}
+
 .category-button.c-coffee::before{
     background: url(/assets/images/stores-categories-icons/coffee-48.png) no-repeat;
     background-size: contain;
@@ -68,38 +92,68 @@ ul.stores-categories-list>li {
     gap: 20px;
 }
 
-.search {
+/*search*/
+.search-wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20px;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
+    gap: 15px;
+    align-items: center;
+    background: var(--greybg);
+    border-radius: 50px;
+    overflow: hidden;
 }
 
 
-div input {
-    border-radius: 10rem 0 0 10rem;
+.search-wrapper input {
     border: none;
-    height: 3rem;
-    width: 20rem;
-    background-color: #f1f1f1;
-    padding: 1.2rem;
-    font-size: 1rem;
-    font-weight: 500;
+    background-color: transparent;
     outline: none;
+    padding: 10px 0px 10px 20px;
 }
 
 .search-btn {
-    color: grey;
-    height: 3rem;
-    width: 5rem;
-    font-size: 1rem;
-    border-radius: 0 10rem 10rem 0;
     border: none;
-    background-color: #C21804;
+    background-color: var(--brandcolor);
     color: white;
-    opacity: .8;
-    outline: none;
+    position: relative;
+    padding: 10px 20px;
+    /* width: 50px;
+    height: 0px;
+    border-radius: 50%; 
+    padding-top: 100%;*/
+}
+.search-btn i{
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+    display: none;
+}
+/* .search-btn .btn-txt{
+    display: none;
+} */
+
+.search-btn::before {
+    border: none;
+    background-color: var(--brandcolor);
+    color: white;
+    position: relative;
 }
 
-.search:hover{
-    opacity: 1;
-    cursor: pointer;
+@media (max-width:991px){
+    .card-deck.stores-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width:767px){
+    .card-deck.stores-list {
+        grid-template-columns: 100%;
+    }
 }

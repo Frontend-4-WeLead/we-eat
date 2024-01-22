@@ -13,6 +13,7 @@ html{
     --brandcolor:#C21804;
     --greytxt:#b0b0b0;
     --greyborder:#f0f0f0;
+    --greybg:#f3f3f3;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
