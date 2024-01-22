@@ -6,13 +6,16 @@
         <div class="card-body">
             <div class="card-body-inner">
                 <div class="store-logo">
-                    <img src="https://cdn.e-food.gr/shop/6494511/logo?t=1687786537">
+                    <img [src]="store.logo_img_url ? store.img_url : '/assets/images/demo_img.jpg'" [alt]="store.name">
                 </div>
                 <div class="store-info">
                     <h3 class="card-title">{{store.name}}</h3>                    
                     <div class="store-category">{{store.category}}</div>
                     <div class="store-info-bottom">
-                        <div class="store-delivery-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 10' - 20'</div>
+                        <div >
+                            <div class="store-delivery-time" *ngIf="store.delivery_time"><i class="fa fa-clock-o" aria-hidden="true"></i> {{store.delivery_time}}</div>
+                        </div>
+                        
                         <div class="store-rating"><i class="fa fa-star" aria-hidden="true"></i> {{store.rating || '-'}}</div>
                     </div>
                 </div>

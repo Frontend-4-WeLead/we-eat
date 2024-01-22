@@ -5,6 +5,7 @@ export interface Store {
     address: string;
     rating: number;
     image_url: string;
+    logo_img_url: string;
     delivery_time: string;
     minimum_order_cost: number;
     opening_hour: number;

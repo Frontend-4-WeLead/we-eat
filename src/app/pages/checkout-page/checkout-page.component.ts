@@ -19,6 +19,7 @@ export class CheckoutPageComponent implements OnInit {
   address: string = "MISSING ADDRESS";
   total: number = 0;
   router = inject(Router);
+  orderCompleted: boolean=false;
 
   ngOnInit(): void {
 
@@ -57,7 +58,7 @@ export class CheckoutPageComponent implements OnInit {
   }
 
   completePurchase() {
-    const max = 1000000;
+   /*  const max = 1000000;
     const min = 100000;
     alert(`Purchase with order number: "${(Math.random() * (max - min + 1) + min).toFixed(0)}" completed!\n` +
       `Your order will be delivered to "${this.address}" in 30 minutes!\n\n` +
@@ -65,7 +66,9 @@ export class CheckoutPageComponent implements OnInit {
       `Cart: "${this.cart.map((item) => item.title).join(", ")}"\n\n` +
       `Thank you for choosing us!`);
 
-    this.router.navigate(['/stores']);
+    this.router.navigate(['/stores']); */
+    this.orderCompleted=true;
+    
 
   }
 }

@@ -83,8 +83,8 @@ export class HomePageComponent {
       return;
     }
 
-    this.filteredPopularStoresList = this.filteredPopularStoresList.filter((p_store) => p_store.category === category_name);    
-    this.filteredStoresList = this.filteredStoresList.filter((store) => store.category === category_name);
+    this.filteredPopularStoresList = this.filteredPopularStoresList.filter((p_store) => p_store.category.toLowerCase() === category_name.toLowerCase());    
+    this.filteredStoresList = this.filteredStoresList.filter((store) => store.category.toLowerCase() === category_name.toLowerCase());
     
     this.storesLength= this.filteredStoresList.length;
     this.famousStoresLength= this.filteredPopularStoresList.length;

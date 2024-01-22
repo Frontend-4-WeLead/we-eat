@@ -1,4 +1,6 @@
 <!-- Main -->
+<ng-template *ngIf="orderCompleted; then successBlock else checkoutBlock"></ng-template>
+<ng-template #checkoutBlock>
 <div class="row d-flex  justify-content-center">
 	<!-- Cart -->
 	<div class="m-3 col-4 border border-1 border-dark rounded-4">
@@ -23,3 +25,26 @@
 		<div class="btn btn-primary m-5" (click)="completePurchase()">Complete Purchase</div>
 	</div>
 </div>
+</ng-template>
+<ng-template #successBlock>
+	<div class="container checkout-success-container">
+		<h2 class="primary-title">Η παραγγελία σας ολοκληρώθηκε!</h2>
+		<div class="address-item">
+			<!-- <span class="label">Διεύθυνση:</span> --><i class="fa fa-map-marker" aria-hidden="true"></i><span class="content">{{address}}</span>
+		</div>
+		<div class="cart-box">
+			<ul class="cart-list">
+				<li *ngFor="let product of cart" class="cart-item">
+					<h4 class="cart-item-title">{{ product.title }}</h4>
+					<span class="cart-item-price"> {{ product.price | currency:'EUR':'symbol' }}</span>
+				</li>
+			</ul>
+			
+			<div class="cart-item total-item">
+				<h4 class="cart-item-title">Σύνολο</h4>
+				  <span class="cart-item-price"> {{ total | currency:'EUR':'symbol' }}</span>
+			</div>
+		</div>
+
+	</div>
+</ng-template>

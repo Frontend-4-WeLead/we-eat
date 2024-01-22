@@ -1,6 +1,6 @@
 <div class="container home-page-container">
 
-  <div class="search-wrapper">
+  <div class="search-wrapper" title="Αναζητήσε καταστήματα με το όνομα ή τη κατηγορία του καταστήματος">
     <input #s [(ngModel)]="searchTerm" type="text" placeholder="Αναζητήσε καταστήματα" (keyup.enter)="searchStores()" >
     <button class="search-btn" (click)="searchStores()"><i class="fa fa-search" aria-hidden="true"></i><span class="btn-txt">Αναζήτηση</span></button>
   </div>
@@ -8,7 +8,7 @@
   <ul class="stores-categories-list">
     <li><button (click)="filterByCategory('ALL')" [class.active]="selectedCategory === 'ALL'" class="category-button c-all" >Όλες οι κατηγορίες</button></li>
     <li><button (click)="filterByCategory('COFFEE')" [class.active]="selectedCategory === 'COFFEE'" class="category-button c-coffee">Καφές</button></li>
-    <li><button (click)="filterByCategory('FAST_FOOD')" [class.active]="selectedCategory === 'FAST_FOOD'" class="category-button c-fast-food">Fast food</button></li>
+    <li><button (click)="filterByCategory('FAST FOOD')" [class.active]="selectedCategory === 'FAST FOOD'" class="category-button c-fast-food">Fast food</button></li>
     <li><button (click)="filterByCategory('PIZZA')" [class.active]="selectedCategory === 'PIZZA'" class="category-button c-pizza">Pizza</button></li>    
     <li><button (click)="filterByCategory('ASIAN')" [class.active]="selectedCategory === 'ASIAN'" class="category-button c-asian">Asian</button></li>
   </ul>
