@@ -65,6 +65,7 @@ export class CheckoutPageComponent implements OnInit {
       `Cart: "${this.cart.map((item) => item.title).join(", ")}"\n\n` +
       `Thank you for choosing us!`);
 
+    this.router.navigate(['/stores']);
 
   }
 }
