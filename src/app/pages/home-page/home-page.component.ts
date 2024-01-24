@@ -1,16 +1,41 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { DataService } from '../../services/data.service';
 import { StoreItemComponent } from '../../components/store-item/store-item.component';
 import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { SearchPageComponent } from '../search-page/search-page.component';
 import { FormsModule } from '@angular/forms';
 import { Store } from '../../models/store';
+import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
+import { Observable, OperatorFunction, debounceTime, distinctUntilChanged, map } from 'rxjs';
+
+const names = [
+  "McDonald's",
+  'Nanou Donuts House',
+  'StreetWok',
+  'Pizza Fan',
+  'Roma Pizza',
+  'Goodys Burger House',
+  'The Big Bad Wolf',
+  'Mikel',
+  'Gregory',
+  'FoodTek',
+  'Cultivos Coffee',
+  'Coffee Lab',
+  'Fast food',
+  'Asian',
+  'Donuts',
+  'Pizza',
+  'Souvlaki',
+  'Coffee',
+  'Other'
+]
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet, StoreItemComponent, SearchPageComponent, FormsModule],
+  imports: [CommonModule, RouterLink, RouterOutlet, StoreItemComponent, SearchPageComponent, 
+    FormsModule, NgbTypeaheadModule, JsonPipe],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
@@ -24,9 +49,8 @@ export class HomePageComponent {
   selectedCategory: string = 'ALL';
   storesLength: number = 0;
   famousStoresLength: number = 0;
-
   searchTerm!: string;
-
+  model: any;
 
   constructor(private route: ActivatedRoute, private router:Router) { }
 
@@ -66,6 +90,15 @@ export class HomePageComponent {
     this.storesLength= this.filteredStoresList.length;
     this.famousStoresLength= this.filteredPopularStoresList.length;
   }
+
+  search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
+		text$.pipe(
+			debounceTime(200),
+			distinctUntilChanged(),
+			map((term) =>
+				term.length < 2 ? [] : names.filter((v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10),
+			),
+		);
 
 
   public onButton() {

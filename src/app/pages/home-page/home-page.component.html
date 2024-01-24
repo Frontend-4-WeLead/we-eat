@@ -1,8 +1,8 @@
 <div class="container home-page-container">
 
   <div class="search-wrapper" title="Αναζητήσε καταστήματα με το όνομα ή τη κατηγορία του καταστήματος">
-    <input #s [(ngModel)]="searchTerm" type="text" placeholder="Αναζητήσε καταστήματα" (keyup.enter)="searchStores()" >
-    <button class="search-btn" (click)="searchStores()"><i class="fa fa-search" aria-hidden="true"></i><span class="btn-txt">Αναζήτηση</span></button>
+    <input #s [(ngModel)]="searchTerm" [(ngModel)]="model" [ngbTypeahead]="search"  type="text" placeholder="Αναζητήσε καταστήματα" (keyup.enter)="searchStores()" >
+    <button class="search-btn" (click)="searchStores()"><i class="fa fa-search" aria-hidden="true"></i><span class="btn-txt">Αναζήτηση</span></button>  
   </div>
 
   <ul class="stores-categories-list">
