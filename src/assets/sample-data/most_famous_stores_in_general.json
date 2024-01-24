@@ -2,10 +2,12 @@
     {
         "id": 1,
         "name": "McDonald's",
-        "category": "FAST_FOOD",
+        "category": "Fast food",
         "address": "Syntagma 15",
-        "img_url": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4076041/cover?t=1647428522&platform=web",
+        "img_url": "https://images.unsplash.com/photo-1619881589670-43629f0e90f1?q=80&w=1974&auto=format&fit=crop",
         "rating":4.7,
+        "delivery_time": "10' - 20'",
+        "logo_img_url":"https://cdn.pixabay.com/photo/2022/07/31/20/37/fries-7356824_1280.png",
         "products": [
             {
                 "id": "1",
@@ -72,9 +74,12 @@
     {
         "id": 3,
         "name": "Nanou Donuts House",
-        "category": "DONUTS",
+        "category": "Donuts",
         "address": "Ampelokipous 23rd Av.",
+        "img_url": "https://images.unsplash.com/photo-1618411640026-24e40dcde1ab?q=80&w=1920&auto=format&fit=crop",
         "rating":4.8,
+        "delivery_time": "10' - 20'",
+        "logo_img_url":"https://cdn.pixabay.com/photo/2020/07/24/18/19/chief-5434741_1280.png",
         "products": [
             {
                 "id": "17",
@@ -117,9 +122,12 @@
     {
         "id": 2,
         "name": "StreetWok",
-        "category": "ASIAN",
+        "category": "Asian",
         "address": "Glyfada Str. 203",
+        "img_url": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=1920&auto=format&fit=crop",
         "rating":4.5,
+        "delivery_time": "10' - 20'",
+        "logo_img_url":"https://cdn.pixabay.com/photo/2022/08/30/18/14/food-7421671_1280.png",
         "products": [
             {
                 "id": "11",
