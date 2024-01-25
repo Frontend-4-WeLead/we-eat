@@ -1,61 +1,64 @@
 <!-- <app-header style="position: sticky; top: 0px; z-index: 100;" /> -->
 <!-- Main -->
-@if (storeInfo === undefined) {
-<app-file-not-found />
-}
-@else {
+<div class="container-fluid">
+	@if (storeInfo === undefined) {
+		<app-page-not-found />
+	}
+	@else {
+		<div class="row">
+			<!-- Store Image and Name -->
+			<div class="my_wrapper store-cover-wrapper">
+				<div class="row store-cover">
+					@if (storeInfo.img_url === undefined)
+					{
+					<img src="../assets/images/demo_img.jpg" alt="`{{storeInfo.name}}`'s store image failed to load" >
+					}
+					@else {
+					<img [src]="storeInfo.img_url" alt="`{{storeInfo.name}}`'s store image" >
+					}
+				</div>
+				<div class="rounded-3 store-name-title-outer" id="store_name">
+					<h1 class="m-0 primary-title">{{storeInfo.name}}</h1>
+				</div>
+			</div>
+		</div>
 
-<div class="row">
-	<!-- Store -->
-	<div class="col-8" style="margin-left: 2em;">
-		<!-- Store Image and Name -->
-		<div class="my_wrapper m-3">
-			<div class="row">
-				@if (storeInfo.img_url === undefined)
+	<div class="row">
+		<!-- Store -->
+		<div class="col-8" >		
+
+			<!-- Products -->
+			<div class="m-3">
+				<h4 class="my-4 mx-3 secondary-title">Products</h4>
+				@for (product of storeInfo.products; track $index) {
+				<app-product class="pointer" [product]="{title:product.name,price:product.price}" [cart]="cart" />
+				<br>
+				}
+
+			</div>
+		</div>
+		<!-- Cart -->
+		<div class="col-3 m-3 store-cart-outer">
+			<div class="store-cart-wrapper">
+
+				<h4 class="secondary-title">Cart</h4>
+				@if (cart.length == 0)
 				{
-				<img src="../assets/images/demo_img.jpg" alt="`{{storeInfo.name}}`'s store image failed to load"
-					class="rounded-4">
+				<p class="my-4">Your cart is empty.<br>Please add Items.</p>
 				}
 				@else {
-				<img [src]="storeInfo.img_url" alt="`{{storeInfo.name}}`'s store image" class="rounded-4">
+				<br>
+				@for (item of cart; track $index)
+				{
+				<app-cart-item [product]="{title:item.title,price:item.price}" [cartIndex]="$index"
+					(cartEmiter)="removeFromCart($event)" />
+				<br>
+				}
+				<br>
+				<div class="btn btn-primary" (click)="goToCheckout()">Proceed to Checkout</div>
 				}
 			</div>
-			<div class="bg-danger rounded-3 " id="store_name">
-				<p class="m-0">{{storeInfo.name}}</p>
-			</div>
-		</div>
-
-		<!-- Products -->
-		<div class="m-3">
-			<h4 class="my-4 mx-3">Products</h4>
-			@for (product of storeInfo.products; track $index) {
-			<app-product class="pointer" [product]="{title:product.name,price:product.price}" [cart]="cart" />
-			<br>
-			}
-
 		</div>
 	</div>
-	<!-- Cart -->
-	<div class="col-3 m-3 ">
-		<div class="border border-1 border-black rounded-3 p-3">
-
-			<h4 class="">Cart</h4>
-			@if (cart.length == 0)
-			{
-			<h5 class="my-4">Your cart is empty.<br>Please add Items.</h5>
-			}
-			@else {
-			<br>
-			@for (item of cart; track $index)
-			{
-			<app-cart-item [product]="{title:item.title,price:item.price}" [cartIndex]="$index"
-				(cartEmiter)="removeFromCart($event)" />
-			<br>
-			}
-			<br>
-			<div class="btn btn-primary" (click)="goToCheckout()">Proceed to Checkout</div>
-			}
-		</div>
-	</div>
+	}
 </div>
-}

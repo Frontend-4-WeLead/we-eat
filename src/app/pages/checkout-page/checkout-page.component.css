@@ -1,3 +1,10 @@
+.checkout-info-outer {
+    background: var(--greybg);
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
 .container.checkout-success-container {
     text-align: center;
     margin-top: 70px;
@@ -60,4 +67,14 @@ h4.cart-item-title {
     border-top: 1px solid;
     padding-top: 15px;
     font-weight: 500;
+}
+
+.no-products-box{
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.no-products-box .secondary-title{
+    margin-bottom: 50px;
 }

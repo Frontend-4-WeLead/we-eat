@@ -7,15 +7,15 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { Product } from '../../models/product';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { Router } from '@angular/router';
-import { FileNotFoundComponent } from '../file-not-found/file-not-found.component';
 import { CartService } from '../../services/cart.service';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 
 @Component({
   selector: 'app-store-page',
   standalone: true,
   imports: [CommonModule, ProductComponent, HeaderComponent,
-    FooterComponent, CartItemComponent, FileNotFoundComponent],
+    FooterComponent, CartItemComponent, PageNotFoundComponent],
   templateUrl: './store-page.component.html',
   styleUrl: './store-page.component.css'
 })

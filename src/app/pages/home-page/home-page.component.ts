@@ -10,6 +10,12 @@ import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, OperatorFunction, debounceTime, distinctUntilChanged, map } from 'rxjs';
 
 const names = [
+  'Fast food',
+  'Asian',
+  'Donuts',
+  'Pizza',
+  'Souvlaki',
+  'Coffee',
   "McDonald's",
   'Nanou Donuts House',
   'StreetWok',
@@ -19,15 +25,9 @@ const names = [
   'The Big Bad Wolf',
   'Mikel',
   'Gregory',
-  'FoodTek',
+  'FoodTek',  
+  'Coffee Lab',  
   'Cultivos Coffee',
-  'Coffee Lab',
-  'Fast food',
-  'Asian',
-  'Donuts',
-  'Pizza',
-  'Souvlaki',
-  'Coffee',
   'Other'
 ]
 
@@ -84,8 +84,17 @@ export class HomePageComponent {
   searchStores() {
     this.filteredStoresList = [...this.storesList];
     this.filteredPopularStoresList = [...this.popularStoresList];
-    this.filteredPopularStoresList = this.filteredPopularStoresList.filter(p_store => p_store.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || p_store.category.toLowerCase().includes(this.searchTerm.toLowerCase()));
-    this.filteredStoresList = this.filteredStoresList.filter(store => store.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || store.category.toLowerCase().includes(this.searchTerm.toLowerCase()))
+    this.filteredPopularStoresList = this.filteredPopularStoresList.filter(p_store => 
+      p_store.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || 
+      p_store.category.toLowerCase().includes(this.searchTerm.toLowerCase()) || 
+      (p_store.products && p_store.products.some((p_product: any) => p_product.category.toLowerCase().includes(this.searchTerm.toLowerCase()) ))
+    );
+    
+    this.filteredStoresList = this.filteredStoresList.filter(store => 
+      store.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || 
+      store.category.toLowerCase().includes(this.searchTerm.toLowerCase()) || 
+      (store.products && store.products.some((product: any) => product.category.toLowerCase().includes(this.searchTerm.toLowerCase()) ))
+    );
     
     this.storesLength= this.filteredStoresList.length;
     this.famousStoresLength= this.filteredPopularStoresList.length;

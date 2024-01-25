@@ -3,12 +3,6 @@
     margin-bottom: 70px;
 }
 
-.secondary-title{
-    margin-top: 40px;
-    margin-bottom: 25px;
-    font-size: 24px;
-}
-
 .empty-stores-list{
     text-align: center;
 }
@@ -132,21 +126,15 @@ ul.stores-categories-list>li {
     color: white;
     position: relative;
     padding: 10px 20px;
-    /* width: 50px;
-    height: 0px;
-    border-radius: 50%; 
-    padding-top: 100%;*/
 }
+
+.search-btn:hover {
+    background-color: var(--brandcolorlight);
+}
+
 .search-btn i{
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%); */
     display: none;
 }
-/* .search-btn .btn-txt{
-    display: none;
-} */
 
 .search-btn::before {
     border: none;

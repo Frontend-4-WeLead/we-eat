@@ -11,9 +11,43 @@ body a {
 
 html{
     --brandcolor:#C21804;
+    --brandcolorlight:#d22714;
     --greytxt:#b0b0b0;
     --greyborder:#f0f0f0;
     --greybg:#f3f3f3;
+
+    --mainboxshadow:4px 4px 16px 0px rgba(0, 0, 0, 0.1);
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+    height: 100%;
+}
+
+body { 
+    margin: 0; 
+    color: #000;
+}
+
+a,button{
+    transition: 0.3s ease-in-out;
+}
+
+.primary-title {
+    font-size: 33px;
+    font-weight: 600;
+}
+
+.secondary-title{
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.btn.btn-main{
+    background: var(--brandcolor);
+    color: #fff;
+}
+
+.btn.btn-main:hover {
+    background: var(--brandcolorlight);
+    color: #fff;
+}

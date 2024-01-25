@@ -1,0 +1,8 @@
+.page404-outer {
+    text-align: center;
+    background: var(--greybg);
+    border-radius: 20px;
+    padding: 70px 40px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}

@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" *ngIf="!isLoginOrSignUpPage()">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" >
   <div class="container-fluid">
     <a class="navbar-brand" href="/stores">
-      <img src="../../assets/images/we-eat-logo.png" alt="Logo" ngClass="header-logo-img" />
+      <img src="../../assets/images/logo/logo.svg" alt="Logo" ngClass="header-logo-img" />
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -14,7 +14,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/stores">Stores</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" *ngIf="!isLoginOrSignUpPage()">
           <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Address
           </a>
@@ -35,7 +35,7 @@
         </li>
       </ul>
 
-      <button type="button" class="btn_img" (click)="showModal()">
+      <button type="button" class="btn_img" (click)="showModal()" *ngIf="!isLoginOrSignUpPage()">
         <img src="../../assets/images/header-profile-icon.png" width="50" height="50" />
       </button>
 

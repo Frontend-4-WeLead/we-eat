@@ -1,0 +1,6 @@
+.product-item{
+	box-shadow: var(--mainboxshadow);
+	border-radius: 5px ;
+	padding: 40px 20px;
+    background: #fff;
+}

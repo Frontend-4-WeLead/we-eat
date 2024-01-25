@@ -1,31 +1,46 @@
 <!-- Main -->
+@if (cart.length <= 0) {
+	<div class="container">
+		<div class="no-products-box">
+			
+			<h2 class="primary-title">Το καλάθι σου είναι άδειο!</h2>
+			<h3 class="secondary-title">Για να συνεχίσεις πρόσθεσε προϊόντα στο καλάθι σου.</h3>
+			<a href="/stores" class="btn btn-main">Eπιστροφή στα καταστήματα</a>
+		</div>
+	</div>
+}
+@else {
 <ng-template *ngIf="orderCompleted; then successBlock else checkoutBlock"></ng-template>
-<ng-template #checkoutBlock>
-<div class="row d-flex  justify-content-center">
-	<!-- Cart -->
-	<div class="m-3 col-4 border border-1 border-dark rounded-4">
 
-		@for (item of cart; track $index)
-		{
-		<app-product class="m-3" [product]="{title:item.title,price:item.price}" />
-		}
-	</div>
-	<!-- Final step before purchase -->
-	<div class="d-flex flex-column justify-content-between m-3 col-4 border border-1 border-black rounded-4 ">
-		<!-- Total Box -->
-		<div class="m-5">
-			<h3 class="my-4">Your total:</h3>
-			<h1>{{total.toFixed(2)}}€</h1>
+<ng-template #checkoutBlock>
+	<div class="container">
+		<div class="row d-flex  justify-content-center checkout-info-outer">
+			<!-- Cart -->
+			<div class="m-3 col-4 rounded-4 checkout-box">
+		
+				@for (item of cart; track $index)
+				{
+				<app-product class="m-3" [product]="{title:item.title,price:item.price}" />
+				}
+			</div>
+			<!-- Final step before purchase -->
+			<div class="d-flex flex-column justify-content-between m-3 col-4 rounded-4 checkout-box">
+				<!-- Total Box -->
+				<div class="m-5">
+					<h3 class="my-4">Your total:</h3>
+					<h1>{{total.toFixed(2)}}€</h1>
+				</div>
+				<div class="mx-5">
+					<h6>Delivered at your location:</h6>
+					<h4>{{address}}</h4>
+				</div>
+				<!-- Complete Purchase button -->
+				<div class="btn btn-primary m-5" (click)="completePurchase()">Complete Purchase</div>
+			</div>
 		</div>
-		<div class="mx-5">
-			<h6>Delivered at your location:</h6>
-			<h4>{{address}}</h4>
-		</div>
-		<!-- Complete Purchase button -->
-		<div class="btn btn-primary m-5" (click)="completePurchase()">Complete Purchase</div>
 	</div>
-</div>
 </ng-template>
+
 <ng-template #successBlock>
 	<div class="container checkout-success-container">
 		<h2 class="primary-title">Η παραγγελία σας ολοκληρώθηκε!</h2>
@@ -48,3 +63,4 @@
 
 	</div>
 </ng-template>
+}
