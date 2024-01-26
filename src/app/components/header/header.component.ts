@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
 
   public showModal(): void {
       this._modalService.show(UserDetailsComponent, {
-          title: 'Ο λογαριασμός μου',
+          title: 'My Account',
           mode: 'disableFullScreen'
       });
   }

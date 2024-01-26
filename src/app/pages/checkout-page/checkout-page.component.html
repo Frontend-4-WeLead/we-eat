@@ -3,9 +3,9 @@
 	<div class="container">
 		<div class="no-products-box">
 			
-			<h2 class="primary-title">Το καλάθι σου είναι άδειο!</h2>
-			<h3 class="secondary-title">Για να συνεχίσεις πρόσθεσε προϊόντα στο καλάθι σου.</h3>
-			<a href="/stores" class="btn btn-main">Eπιστροφή στα καταστήματα</a>
+			<h2 class="primary-title">Your cart is empty!</h2>
+			<h3 class="secondary-title">To continue add products to your cart.</h3>
+			<a href="/stores" class="btn btn-main">Return to the stores</a>
 		</div>
 	</div>
 }
@@ -43,7 +43,7 @@
 
 <ng-template #successBlock>
 	<div class="container checkout-success-container">
-		<h2 class="primary-title">Η παραγγελία σας ολοκληρώθηκε!</h2>
+		<h2 class="primary-title">Your order is placed!</h2>
 		<div class="address-item">
 			<!-- <span class="label">Διεύθυνση:</span> --><i class="fa fa-map-marker" aria-hidden="true"></i><span class="content">{{address}}</span>
 		</div>
@@ -56,7 +56,7 @@
 			</ul>
 			
 			<div class="cart-item total-item">
-				<h4 class="cart-item-title">Σύνολο</h4>
+				<h4 class="cart-item-title">Total</h4>
 				  <span class="cart-item-price"> {{ total | currency:'EUR':'symbol' }}</span>
 			</div>
 		</div>

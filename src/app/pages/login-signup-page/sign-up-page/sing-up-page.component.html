@@ -1,17 +1,17 @@
 <form [formGroup]="applyForm">
-  <h3 class="d-flex justify-content-center">Εγγραφή</h3>
+  <h3 class="d-flex justify-content-center">Register</h3>
     <!-- 2 column grid layout with text inputs for the first and last names -->
     <div class="row mb-4">
       <div class="col">
         <div data-mdb-input-init class="form-outline">
           <input formControlName="firstname" type="text" id="form3Example1" class="form-control" />
-          <label class="form-label" for="form3Example1">Όνομα</label>
+          <label class="form-label" for="form3Example1">Name</label>
         </div>
       </div>
       <div class="col">
         <div data-mdb-input-init class="form-outline">
           <input formControlName="lastname" type="text" id="form3Example2" class="form-control" />
-          <label class="form-label" for="form3Example2">Επώνυμο</label>
+          <label class="form-label" for="form3Example2">Surname</label>
         </div>
       </div>
     </div>
@@ -25,10 +25,10 @@
     <!-- Password input -->
     <div data-mdb-input-init class="form-outline mb-4">
       <input formControlName="password" type="password" id="form3Example4" class="form-control" />
-      <label class="form-label" for="form3Example4">Κωδικός πρόσβασης</label>
+      <label class="form-label" for="form3Example4">Password</label>
     </div>
   
     <!-- Submit button -->
-    <a routerLink="/stores"><button (click)="onClick()" data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Εγγραφή</button></a>
+    <a routerLink="/stores"><button (click)="onClick()" data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Register</button></a>
   
   

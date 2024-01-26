@@ -5,8 +5,8 @@
     <div class="card-body">
       <div class="d-flex justify-content-around">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Όνομα</strong></li>
-          <li class="list-group-item"><strong>Επίθετο</strong></li>
+          <li class="list-group-item"><strong>Name</strong></li>
+          <li class="list-group-item"><strong>Surname</strong></li>
           <li class="list-group-item"><strong>Email</strong></li>
         </ul>
         <ul class="list-group list-group-flush">
@@ -22,7 +22,7 @@
         </ul>
       </div>
      
-      <div class="d-flex justify-content-center" style="margin-top: 22px; margin-bottom: 22px; color: green;"><strong><u>Οι παραγγελίες μου</u></strong></div>
+      <div class="d-flex justify-content-center" style="margin-top: 22px; margin-bottom: 22px; color: green;"><strong><u>My orders</u></strong></div>
 
       @for(order of users[0].order_list; track $index){
       <div>

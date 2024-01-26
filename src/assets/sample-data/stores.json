@@ -179,7 +179,7 @@
         "products": [
             {
                 "id": "89",
-                "name": "Μαργαρίτα",
+                "name": "Margherita",
                 "category": "PIZZA",
                 "price" : 5.00
             },
@@ -203,7 +203,7 @@
             },
             {
                 "id": "21",
-                "name": "Ντάκος",
+                "name": "Dakos",
                 "category": "SALAD",
                 "price" : 5.60
             },
