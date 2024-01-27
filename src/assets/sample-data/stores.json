@@ -224,7 +224,45 @@
         "img_url": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4076041/cover?t=1647428522&platform=web" ,
         "rating": 4.2,
         "delivery_time": "10' - 15'",
-        "logo_img_url":"https://cdn.pixabay.com/photo/2022/08/07/22/19/pizza-7371507_1280.png"
+        "logo_img_url":"https://cdn.pixabay.com/photo/2022/08/07/22/19/pizza-7371507_1280.png",
+        "products": [
+            {
+                "id": "8",
+                "name": "Chef`s salad",
+                "category": "SALADS",
+                "price" : 6.30
+            },
+            {
+                "id": "7",
+                "name": "Greek salad",
+                "category": "SALADS",
+                "price" : 7.20
+            },
+            {
+                "id": "14",
+                "name": "Champion",
+                "category": "PIZZA",
+                "price" : 10.60
+            },
+            {
+                "id": "74",
+                "name": "Ethnic",
+                "category": "PIZZA",
+                "price" : 9.20
+            },
+            {
+                "id": "29",
+                "name": "Texas",
+                "category": "PIZZA",
+                "price" : 9.40
+            },
+            {
+                "id": "28",
+                "name": "Spaghetti napolitana",
+                "category": "PASTA",
+                "price" : 6.80
+            }
+        ]
     },
     {
         "id": 105,
@@ -234,7 +272,45 @@
         "img_url": "https://images.unsplash.com/photo-1551782450-17144efb9c50?q=80&w=1920&auto=format&fit=crop" ,
         "rating":3.9,
         "delivery_time": "10' - 15'",
-        "logo_img_url":"https://cdn.pixabay.com/photo/2022/07/17/19/29/logo-7328204_1280.png"
+        "logo_img_url":"https://cdn.pixabay.com/photo/2022/07/17/19/29/logo-7328204_1280.png",
+        "products": [
+            {
+                "id": "15",
+                "name": "Caesar`s με crispy chicken & bacon",
+                "category": "SALADS",
+                "price" : 7.50
+            },
+            {
+                "id": "87",
+                "name": "Mama`s",
+                "category": "SALADS",
+                "price" : 4.60
+            },
+            {
+                "id": "64",
+                "name": "Cheeseburger",
+                "category": "BURGERS",
+                "price" : 5.10
+            },
+            {
+                "id": "36",
+                "name": "Golden burger",
+                "category": "BURGERS",
+                "price" : 5.90
+            },
+            {
+                "id": "95",
+                "name": "Texas BBQ burger",
+                "category": "BURGERS",
+                "price" : 7.20
+            },
+            {
+                "id": "20",
+                "name": "Bolognese",
+                "category": "PASTA",
+                "price" : 6.50
+            }
+        ]
     },
     {
         "id": 80,
@@ -244,7 +320,45 @@
         "img_url": "https://images.unsplash.com/photo-1633321702518-7feccafb94d5?q=80&w=1920&auto=format&fit=crop" ,
         "rating":4.8,
         "delivery_time": "20' - 30'",
-        "logo_img_url":"https://cdn.pixabay.com/photo/2022/08/30/18/14/food-7421671_1280.png"
+        "logo_img_url":"https://cdn.pixabay.com/photo/2022/08/30/18/14/food-7421671_1280.png",
+        "products": [
+            {
+                "id": "44",
+                "name": "Caesar`s",
+                "category": "SALADS",
+                "price" : 7.40
+            },
+            {
+                "id": "77",
+                "name": "BBQ chicken",
+                "category": "SALADS",
+                "price" : 5.00
+            },
+            {
+                "id": "66",
+                "name": "Γύρος χοιρινός σε πίτα",
+                "category": "Souvlaki",
+                "price" : 3.80
+            },
+            {
+                "id": "33",
+                "name": "Γύρος κοτόπουλο σε πίτα",
+                "category": "Souvlaki",
+                "price" : 3.80
+            },
+            {
+                "id": "99",
+                "name": "Καλαμάκι χοιρινό",
+                "category": "Souvlaki",
+                "price" : 2.30
+            },
+            {
+                "id": "55",
+                "name": "Καλαμάκι κοτόπουλο",
+                "category": "Souvlaki",
+                "price" : 2.30
+            }
+        ]
     },
     {
         "id": 34,
@@ -254,7 +368,45 @@
         "img_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1937&auto=format&fit=crop" ,
         "rating":5.0,
         "delivery_time": "10' - 15'",
-        "logo_img_url":"https://cdn.pixabay.com/photo/2018/08/30/16/57/coffee-3642712_1280.png"
+        "logo_img_url":"https://cdn.pixabay.com/photo/2018/08/30/16/57/coffee-3642712_1280.png",
+        "products": [
+            {
+                "id": "484",
+                "name": "Espresso Classic Κρύος",
+                "category": "COFFEE",
+                "price" : 2.20
+            },
+            {
+                "id": "767",
+                "name": "Cappuccino Classic Κρύος",
+                "category": "COFFEE",
+                "price" : 2.50
+            },
+            {
+                "id": "56",
+                "name": "Espresso Macchiato Κρύος",
+                "category": "COFFEE",
+                "price" : 2.40
+            },
+            {
+                "id": "31",
+                "name": "Donut Chocolate",
+                "category": "DONUTS",
+                "price" : 1.96
+            },
+            {
+                "id": "991",
+                "name": "Donut Vanilla",
+                "category": "DONUTS",
+                "price" : 1.80
+            },
+            {
+                "id": "51",
+                "name": "Donut Caramel",
+                "category": "DONUTS",
+                "price" : 1.90
+            }
+        ]
     },
   
     {
@@ -265,7 +417,46 @@
         "img_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3" ,
         "rating":4.9,
         "delivery_time": "10' - 15'",
-        "logo_img_url":"https://cdn.pixabay.com/photo/2020/07/24/18/19/chief-5434741_1280.png"
+        "logo_img_url":"https://cdn.pixabay.com/photo/2020/07/24/18/19/chief-5434741_1280.png",
+        "products": [
+            {
+                "id": "414",
+                "name": "Cappuccino Freddo",
+                "category": "COFFEE",
+                "price" : 2.40
+            },
+            {
+                "id": "747",
+                "name": "Espresso Freddo",
+                "category": "COFFEE",
+                "price" : 2.20
+            },
+            {
+                "id": "556",
+                "name": "Crema Freddo",
+                "category": "COFFEE",
+                "price" : 2.70
+            },
+            {
+                "id": "990",
+                "name": "Σαλάτα Chef",
+                "category": "SALADS",
+                "price" : 5.50
+            },
+            {
+                "id": "341",
+                "name": "Cheeseburger",
+                "category": "BURGERS",
+                "price" : 4.60
+            },
+           
+            {
+                "id": "541",
+                "name": "BBQ Burger",
+                "category": "BURGERS",
+                "price" : 4.20
+            }
+        ]
     },
   
     {
@@ -284,7 +475,45 @@
         "address": "Panormou 48",
         "rating":4.5,
         "delivery_time": "10' - 15'",
-        "logo_img_url":"https://cdn.pixabay.com/photo/2014/04/02/16/23/coffee-307147_1280.png"
+        "logo_img_url":"https://cdn.pixabay.com/photo/2014/04/02/16/23/coffee-307147_1280.png",
+        "products": [
+            {
+                "id": "423",
+                "name": "Espresso",
+                "category": "COFFEE",
+                "price" : 1.70
+            },
+            {
+                "id": "767",
+                "name": "Freddo espresso",
+                "category": "COFFEE",
+                "price" : 2.00
+            },
+            {
+                "id": "566",
+                "name": "Cappuccino",
+                "category": "COFFEE",
+                "price" : 2.20
+            },
+            {
+                "id": "790",
+                "name": "Flat white",
+                "category": "COFFEE",
+                "price" : 2.50
+            },
+            {
+                "id": "371",
+                "name": "Tuna salad",
+                "category": "SALADS",
+                "price" : 6.60
+            },
+            {
+                "id": "551",
+                "name": "Chicken",
+                "category": "SALAD",
+                "price" : 6.60
+            }
+        ]
     },
     {
         "id": 4,
@@ -293,6 +522,44 @@
         "address": "Athinaion 15" ,
         "rating":4.6,
         "delivery_time": "10' - 15'",
-        "logo_img_url":"https://cdn.pixabay.com/photo/2018/08/30/16/57/coffee-3642712_1280.png"
+        "logo_img_url":"https://cdn.pixabay.com/photo/2018/08/30/16/57/coffee-3642712_1280.png",
+        "products": [
+            {
+                "id": "423",
+                "name": "Espresso Coffee Lab",
+                "category": "COFFEE",
+                "price" : 1.70
+            },
+            {
+                "id": "766",
+                "name": "Freddo espresso on the rocks",
+                "category": "COFFEE",
+                "price" : 2.00
+            },
+            {
+                "id": "569",
+                "name": "Freddo cappuccino Coffee Lab",
+                "category": "COFFEE",
+                "price" : 2.30
+            },
+            {
+                "id": "799",
+                "name": "Iced flat white",
+                "category": "COFFEE",
+                "price" : 2.50
+            },
+            {
+                "id": "377",
+                "name": "Donut croc & hazelnut hoop",
+                "category": "DONUTS",
+                "price" : 1.10
+            },
+            {
+                "id": "558",
+                "name": "Mini donut με πραλίνα",
+                "category": "DONUTS",
+                "price" : 0.80
+            }
+        ]
     }
 ]

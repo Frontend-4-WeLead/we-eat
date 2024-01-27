@@ -52,7 +52,15 @@
                 "number": "76",
                 "district": "Kipseli",
                 "city": "Athens"
+            },
+            {
+                "street": "Ippokratous",
+                "number": "113",
+                "district": "Neapoli",
+                "city": "Athens"
             }
+            
+
         ]
     }
 ]
