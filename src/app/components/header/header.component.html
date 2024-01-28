@@ -18,19 +18,15 @@
           <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Address
           </a>
+         
           <ul class="dropdown-menu">
+            @for (address of users[0].address_list; track $index) {
             <li>
-              <button class="dropdown-item" [ngClass]="{'selected': selectedAddress === 'Ipirou 1'}"
-                (click)="selectAddress('Ipirou 1')">Ipirou 1</button>
+              <button class="dropdown-item" 
+              [ngClass]="{'selected': selectedAddress === 'Ipirou 1'}"
+                (click)="selectAddress(address.street)">{{address.street}} {{address.number}}</button>
             </li>
-            <li>
-              <button class="dropdown-item" [ngClass]="{'selected': selectedAddress === 'Ipirou 2'}"
-                (click)="selectAddress('Ipirou 2')">Ipirou 2</button>
-            </li>
-            <li>
-              <button class="dropdown-item" [ngClass]="{'selected': selectedAddress === 'Ipirou 3'}"
-                (click)="selectAddress('Ipirou 3')">Ipirou 3</button>
-            </li>
+        }
           </ul>
         </li>
       </ul>

@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ModalModule, ModalService } from '@developer-partners/ngx-modal-dialog';
 import { AddressService } from '../../services/address.service';
+import { User } from '../../models/user';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'app-header',
@@ -17,12 +19,22 @@ import { AddressService } from '../../services/address.service';
 export class HeaderComponent implements OnInit {
 
   selectedAddress: string = '';
+  service = inject(UserService);
+  users: User[] = [];
+ 
 
   constructor(private router: Router, private readonly _modalService: ModalService, private addressService: AddressService) { }
 
   ngOnInit() {
       this.selectAddress('Ipirou 1');
+      this.getUser();
   }
+
+  getUser(){
+    this.service.getUser().subscribe({
+        next: res => {this.users = res; console.log(this.users)}
+    })
+}
 
   public showModal(): void {
       this._modalService.show(UserDetailsComponent, {
