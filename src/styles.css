@@ -17,7 +17,9 @@ html{
     --greybg:#f3f3f3;
 
     --mainboxshadow:4px 4px 16px 0px rgba(0, 0, 0, 0.1);
+    --hf:330px;
 }
+
 html, body { 
     height: 100%;
 }
@@ -50,4 +52,8 @@ a,button{
 .btn.btn-main:hover {
     background: var(--brandcolorlight);
     color: #fff;
+}
+
+.btn.btn-full {
+    display: block;
 }

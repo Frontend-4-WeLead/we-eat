@@ -3,6 +3,11 @@
     background: var(--greybg);
     border-radius: 20px;
     padding: 70px 40px;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.page-404-img-wrapper img {
+    max-height: 400px;
+    margin-top: -40px;
 }

@@ -20,13 +20,13 @@
           </a>
          
           <ul class="dropdown-menu">
-            @for (address of users[0].address_list; track $index) {
-            <li>
-              <button class="dropdown-item" 
-              [ngClass]="{'selected': selectedAddress === 'Ipirou 1'}"
-                (click)="selectAddress(address.street)">{{address.street}} {{address.number}}</button>
-            </li>
-        }
+            @for (address of user[0].address_list; track $index) {
+              <li>
+                <button class="dropdown-item" 
+                [ngClass]="{'selected': selectedAddress === formatAddress(address)}"
+                  (click)="selectAddress(formatAddress(address))">{{ formatAddress(address) }}</button>
+              </li>
+            }
           </ul>
         </li>
       </ul>

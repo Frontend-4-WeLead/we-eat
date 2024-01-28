@@ -20,6 +20,7 @@ export class CheckoutPageComponent implements OnInit {
   total: number = 0;
   router = inject(Router);
   orderCompleted: boolean=false;
+  showAlert: boolean = false;
 
   ngOnInit(): void {
 
@@ -29,26 +30,6 @@ export class CheckoutPageComponent implements OnInit {
       }
     })
 
-    // PLACEHOLDER DATA
-    // this.cart = [
-    //   {
-    //     "title": "Big Mac",
-    //     "price": 4.99
-    //   },
-    //   {
-    //     "title": "Crispy McBacon",
-    //     "price": 3.99
-    //   },
-    //   {
-    //     "title": "Deluxe Burger",
-    //     "price": 2.99
-    //   },
-    //   {
-    //     "title": "Deluxe Burger",
-    //     "price": 2.99
-    //   }
-    // ]
-    // END PLACEHOLDER DATA
     this.total = this.cart.reduce((acc, curr) => acc + curr.price, 0);
     this.address_service.getObservable().subscribe({
       next: (data) => {
@@ -67,12 +48,11 @@ export class CheckoutPageComponent implements OnInit {
       `Thank you for choosing us!`);
 
     this.router.navigate(['/stores']); */
-    if (this.cart && this.cart.length > 0) {
+    if (this.cart && this.cart.length > 0 && this.address!="MISSING ADDRESS") {
       this.orderCompleted=true;
     }
-    /* else{
-      alert('Empty cart')
-    } */
-
+    else if (this.address=="MISSING ADDRESS"){
+      this.showAlert = true;
+    }
   }
 }
