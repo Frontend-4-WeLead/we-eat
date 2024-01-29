@@ -46,6 +46,14 @@ a,button{
     font-size: 24px;
 }
 
+.grey-bg-title{
+    display: block;
+    background: var(--greybg);
+    padding: 5px 13px;
+    font-size: 18px;
+    color: #000;
+}
+
 .btn.btn-main,
 .btn-main{
     background: var(--secondarycolor);
@@ -67,4 +75,13 @@ a,button{
 
 .btn.btn-full {
     display: block;
+}
+
+.dp-backdrop.dp-modal-backdrop .dp-modal-header {
+    background: var(--secondarycolor);
+    color: #000;
+}
+ 
+.dp-backdrop.dp-modal-backdrop .dp-close-modal {
+    color: #000;
 }
