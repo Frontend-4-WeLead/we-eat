@@ -465,7 +465,45 @@
         "address": "Ioanninon 14" ,
         "rating":4.3,
         "delivery_time": "15' - 20'",
-        "logo_img_url":"https://cdn.pixabay.com/photo/2016/10/08/18/35/restaurant-1724294_1280.png"
+        "logo_img_url":"https://cdn.pixabay.com/photo/2016/10/08/18/35/restaurant-1724294_1280.png",
+        "products": [
+            {
+                "id": "397",
+                "name": "Ρόκα",
+                "category": "SALADS",
+                "price" : 5.50
+            },
+            {
+                "id": "188",
+                "name": "Caesar`s",
+                "category": "SALADS",
+                "price" : 6.00
+            },
+            {
+                "id": "149",
+                "name": "Napolitan",
+                "category": "PASTA",
+                "price" : 5.00
+            },
+            {
+                "id": "200",
+                "name": "Pesto La Strada",
+                "category": "PASTA",
+                "price" : 6.10
+            },
+            {
+                "id": "211",
+                "name": "Donut salted caramel ",
+                "category": "DONUT",
+                "price" : 2.40
+            },
+            {
+                "id": "224",
+                "name": "Donut cookies",
+                "category": "DONUT",
+                "price" : 2.10
+            }
+        ]
     },
     {
         "id": 15,

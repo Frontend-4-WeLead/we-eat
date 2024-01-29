@@ -12,7 +12,6 @@ import { RouterLink } from '@angular/router';
 })
 export class SingUpPageComponent {
 applyForm!: FormGroup
-public message = "Thank you for your registration!";
 
 ngOnInit(): void {
   this.setFormValues();
@@ -27,7 +26,4 @@ ngOnInit(): void {
   });
  }
 
- public onClick() {
-  alert(this.message);
-}
 }
