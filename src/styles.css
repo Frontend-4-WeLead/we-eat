@@ -12,6 +12,8 @@ body a {
 html{
     --brandcolor:#C21804;
     --brandcolorlight:#d22714;
+    --secondarycolor:#fab800;    
+    --secondarycolorlight:#ffc526;
     --greytxt:#b0b0b0;
     --greyborder:#f0f0f0;
     --greybg:#f3f3f3;
@@ -44,14 +46,23 @@ a,button{
     font-size: 24px;
 }
 
-.btn.btn-main{
-    background: var(--brandcolor);
-    color: #fff;
+.btn.btn-main,
+.btn-main{
+    background: var(--secondarycolor);
+    color: #000;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: none;
 }
 
-.btn.btn-main:hover {
-    background: var(--brandcolorlight);
-    color: #fff;
+.btn.btn-main:hover,
+.btn.btn-main:active,
+.btn.btn-main:focus-visible,
+.btn-main:hover,
+.btn-main:active,
+.btn-main:focus-visible {
+    background: var(--secondarycolorlight);
+    color: #000;
 }
 
 .btn.btn-full {
