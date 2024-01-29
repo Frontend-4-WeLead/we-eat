@@ -17,9 +17,10 @@
 }
 
 .btn_img {
-  background: transparent;
   border-radius: 50%;
-  border: none;
+  padding: 0;
+  background-color: red;
+  overflow: hidden;
 }
 
 .btn_img:hover{
@@ -27,7 +28,17 @@
 }
 
 .img_profile {
-  border-radius: 50%;
   width: 50px;
+  padding: 10px;
+  
+}
+
+.dp-backdrop.dp-modal-backdrop .dp-modal-header {
+  background: var(--secondarycolor);
+  color: #000;
+}
+
+.dp-backdrop.dp-modal-backdrop .dp-close-modal {
+  color: #000;
 }
 
