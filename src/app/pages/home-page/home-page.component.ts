@@ -45,7 +45,6 @@ export class HomePageComponent {
   filteredStoresList: Store[] = [];
   filteredPopularStoresList: Store[] = [];
   service = inject(DataService);
-  showStores = true;
   selectedCategory: string = 'ALL';
   storesLength: number = 0;
   famousStoresLength: number = 0;
@@ -84,6 +83,7 @@ export class HomePageComponent {
   searchStores() {
     this.filteredStoresList = [...this.storesList];
     this.filteredPopularStoresList = [...this.popularStoresList];
+    
     this.filteredPopularStoresList = this.filteredPopularStoresList.filter(p_store => 
       p_store.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || 
       p_store.category.toLowerCase().includes(this.searchTerm.toLowerCase()) || 
@@ -108,11 +108,6 @@ export class HomePageComponent {
 				term.length < 2 ? [] : names.filter((v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10),
 			),
 		);
-
-
-  public onButton() {
-    this.showStores = false
-  }
 
   filterByCategory(category_name:string) {        
     this.filteredStoresList = [...this.storesList];

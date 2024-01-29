@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { FamousStore } from '../models/famous_store';
 import { Store } from '../models/store';
 import { map } from 'rxjs/operators';
 

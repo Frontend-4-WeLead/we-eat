@@ -1,5 +1,5 @@
 <div class="container home-page-container">
-
+  
   <div class="search-wrapper" title="Search by store name or category">
     <input #s [(ngModel)]="searchTerm" [(ngModel)]="model" [ngbTypeahead]="search"  type="text" placeholder="Search (Store or Category)" (keyup.enter)="searchStores()" >
     <button class="search-btn" (click)="searchStores()"><i class="fa fa-search" aria-hidden="true"></i><span class="btn-txt">Search</span></button>  
@@ -21,7 +21,7 @@
     }
   </div>
 
-  <h2 class="secondary-title" *ngIf="storesLength > 0">Extra Stores</h2>
+  <h2 class="secondary-title" *ngIf="storesLength > 0">Other Stores</h2>
 
   <div class="card-deck stores-list">
     @for(s of filteredStoresList; track $index){

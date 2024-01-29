@@ -15,15 +15,10 @@ export interface Store {
 }
 
 export interface Product {
-    id: number;
+    id: string;
     name: string;
-    /* title: string; */
     category: string;
     price: number;
-   /*  image_url: string;
-    ingredients: string[];
-    allergenic: string;
-    calories: number;*/
 }
 
 /* export interface StoreCategory {
