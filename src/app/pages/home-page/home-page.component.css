@@ -19,13 +19,13 @@ button.category-button.active {
 }
 
 .category-button::before {
-    
     transition: 0.3s ease-in-out;
 }
 
 .category-button:hover::before {
     transform: scale(1.1);
 }
+
 /*categories list*/
 ul.stores-categories-list {
     display: flex;

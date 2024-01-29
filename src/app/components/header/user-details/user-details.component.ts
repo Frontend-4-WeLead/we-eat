@@ -16,12 +16,12 @@ export class UserDetailsComponent {
   users: User[] = [];
  
   getUser(){
-      this.service.getUser().subscribe({
-          next: res => {this.users = res; console.log(this.users)}
-      })
+    this.service.getUser().subscribe({
+      next: res => {this.users = res; console.log(this.users)}
+    })
   }
   
   ngOnInit(){
-       this.getUser();
+    this.getUser();
   }
 }

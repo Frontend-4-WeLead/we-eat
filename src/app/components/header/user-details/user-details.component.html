@@ -1,47 +1,47 @@
 <div class="img">
-      <img class="profile-img" [src]="users[0].image_url" alt="user-image" />
-    </div>
+  <img class="profile-img" [src]="users[0].image_url" alt="user-image" />
+</div>
 
-    <div class="card-body">
-      <div class="d-flex justify-content-around">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Name</strong></li>
-          <li class="list-group-item"><strong>Surname</strong></li>
-          <li class="list-group-item"><strong>Email</strong></li>
-        </ul>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <strong>{{ users[0].firstName }}</strong>
-          </li>
-          <li class="list-group-item">
-            <strong>{{ users[0].lastName }}</strong>
-          </li>
-          <li class="list-group-item">
-            <strong>{{ users[0].email}}</strong>
-          </li>
-        </ul>
-      </div>
-     
-      <div class="grey-bg-title" style="margin-top: 22px; margin-bottom: 22px;"><strong>My orders</strong></div>
+<div class="card-body">
+  <div class="d-flex justify-content-around">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Name</strong></li>
+      <li class="list-group-item"><strong>Surname</strong></li>
+      <li class="list-group-item"><strong>Email</strong></li>
+    </ul>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <strong>{{ users[0].firstName }}</strong>
+      </li>
+      <li class="list-group-item">
+        <strong>{{ users[0].lastName }}</strong>
+      </li>
+      <li class="list-group-item">
+        <strong>{{ users[0].email}}</strong>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="grey-bg-title" style="margin-top: 22px; margin-bottom: 22px;"><strong>My orders</strong></div>
 
-      @for(order of users[0].order_list; track $index){
-      <div>
-        
-        <div class="d-flex ">
-        
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>{{order.store}}</strong></li>
-            <li class="list-group-item order">{{order.order_date}}
-            <li class="list-group-item order">
+  @for(order of users[0].order_list; track $index){
+    <div>
+      
+      <div class="d-flex ">
+      
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>{{order.store}}</strong></li>
+          <li class="list-group-item order">{{order.order_date}}
+          <li class="list-group-item order">
             @for(product of order.product_list; track $index) {
               {{product.quantity}}x {{product.name}},
-            } 
+            }
           </li>
-            <li class="list-group-item order">Total price: {{order.total_price}}€</li>
-          </ul>
+          <li class="list-group-item order">Total price: {{order.total_price}}€</li>
+        </ul>
       </div>
-      </div>
-      }
     </div>
+  }
+</div>
   
 

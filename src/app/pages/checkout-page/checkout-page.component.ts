@@ -39,15 +39,6 @@ export class CheckoutPageComponent implements OnInit {
   }
 
   completePurchase() {
-   /*  const max = 1000000;
-    const min = 100000;
-    alert(`Purchase with order number: "${(Math.random() * (max - min + 1) + min).toFixed(0)}" completed!\n` +
-      `Your order will be delivered to "${this.address}" in 30 minutes!\n\n` +
-      `Total: ${this.total}€\n` +
-      `Cart: "${this.cart.map((item) => item.title).join(", ")}"\n\n` +
-      `Thank you for choosing us!`);
-
-    this.router.navigate(['/stores']); */
     if (this.cart && this.cart.length > 0 && this.address!="MISSING ADDRESS") {
       this.orderCompleted=true;
     }

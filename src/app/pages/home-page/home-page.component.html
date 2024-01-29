@@ -17,30 +17,16 @@
 
   <div class="card-deck stores-list popular-stores-list">
     @for(p of filteredPopularStoresList; track $index){
-
-    <!-- <app-most-famous-stores [famousStores]="f"></app-most-famous-stores> -->
-    <app-store-item [store]="p" class="store-item-wrapper"></app-store-item>
-
-    } <!-- @empty {
-    <div class="empty-list">
-      <h2>No famous shops available....</h2>
-    </div>
-    } -->
+      <app-store-item [store]="p" class="store-item-wrapper"></app-store-item>
+    }
   </div>
 
   <h2 class="secondary-title" *ngIf="storesLength > 0">Extra Stores</h2>
 
   <div class="card-deck stores-list">
     @for(s of filteredStoresList; track $index){
-
-    <app-store-item [store]="s" class="store-item-wrapper"></app-store-item>
-    <!-- <pre>{{storesList | json}}</pre> -->
-
-    } <!-- @empty {
-    <div class="empty-list">
-      <h2>No shops available....</h2>
-    </div>
-    } -->
+      <app-store-item [store]="s" class="store-item-wrapper"></app-store-item>
+    } 
   </div>
 
   <div class="empty-stores-list" *ngIf="storesLength == 0 && famousStoresLength == 0">

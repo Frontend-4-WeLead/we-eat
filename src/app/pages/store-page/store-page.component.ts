@@ -28,6 +28,8 @@ export class StorePageComponent implements OnInit {
   @Input() storeId: number = 0;
   router = inject(Router);
 
+  
+
 
   ngOnInit(): void {
     // Took me 2 hours to find that even though in Typescript i have defined
@@ -39,6 +41,9 @@ export class StorePageComponent implements OnInit {
         this.storeInfo = data;
       }
     })
+
+    //---------------
+    localStorage.setItem('cart','1234');
   }
   removeFromCart(cartIndex: number) {
     if (cartIndex > -1) {

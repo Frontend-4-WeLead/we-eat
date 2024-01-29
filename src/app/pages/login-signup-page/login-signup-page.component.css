@@ -52,7 +52,7 @@ img {
 .active-btn-33:active:hover,
 .active-btn-33:focus:hover,
 .active-btn-33:focus {
-  background-color: #D33A2C;
+  background-color: var(--brandcolor);
   box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
   color: #FFFFFF;
 }

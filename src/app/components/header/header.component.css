@@ -10,16 +10,15 @@
   margin-left: 15px;
 }
 
-
 .selected {
-  border: 2px solid red;
+  border: 2px solid var(--brandcolor);
   border-radius: 5px; 
 }
 
 .btn_img {
   border-radius: 50%;
   padding: 0;
-  background-color: red;
+  background-color: var(--secondarycolor);
   overflow: hidden;
 }
 
