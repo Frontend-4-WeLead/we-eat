@@ -5,9 +5,10 @@ import { StoreItemComponent } from '../../components/store-item/store-item.compo
 import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { SearchPageComponent } from '../search-page/search-page.component';
 import { FormsModule } from '@angular/forms';
-import { Store } from '../../models/store';
+import { Product, Store } from '../../models/store';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, OperatorFunction, debounceTime, distinctUntilChanged, map } from 'rxjs';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 const names = [
   'Fast food',
@@ -44,6 +45,7 @@ export class HomePageComponent {
   popularStoresList: Store[] = [];
   filteredStoresList: Store[] = [];
   filteredPopularStoresList: Store[] = [];
+  cart: Array<Product> = [];
   service = inject(DataService);
   selectedCategory: string = 'ALL';
   storesLength: number = 0;
@@ -51,7 +53,7 @@ export class HomePageComponent {
   searchTerm!: string;
   model: any;
 
-  constructor(private route: ActivatedRoute, private router:Router) { }
+  constructor(private route: ActivatedRoute, private router:Router, private localStorageService: LocalStorageService) { }
 
 
   getAllStores() {
@@ -78,6 +80,7 @@ export class HomePageComponent {
   ngOnInit() {
     this.getAllStores();
     this.getAllFamousStores();
+    this.localStorageService.setItem('Cart', '[]');
   }
 
   searchStores() {

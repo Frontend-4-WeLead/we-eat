@@ -4,6 +4,7 @@ import { CartService } from '../../services/cart.service';
 import { ProductComponent } from '../store-page/components/product/product.component';
 import { AddressService } from '../../services/address.service';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-checkout-page',
@@ -13,6 +14,9 @@ import { Router } from '@angular/router';
   styleUrl: './checkout-page.component.css'
 })
 export class CheckoutPageComponent implements OnInit {
+
+  constructor(private localStorageService: LocalStorageService) {}
+
   cart_service = inject(CartService)
   address_service = inject(AddressService)
   cart: Array<any> = [];
@@ -24,11 +28,13 @@ export class CheckoutPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.cart_service.getObservable().subscribe({
-      next: (data) => {
-        this.cart = data || this.cart;
-      }
-    })
+    // this.cart_service.getObservable().subscribe({
+    //   next: (data) => {
+    //     this.cart = data || this.cart;
+    //   }
+    // })
+
+    this.cart = JSON.parse(localStorage.getItem('Cart') || '[]');
 
     this.total = this.cart.reduce((acc, curr) => acc + curr.price, 0);
     this.address_service.getObservable().subscribe({

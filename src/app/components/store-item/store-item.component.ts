@@ -10,5 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './store-item.component.css'
 })
 export class StoreItemComponent {
+
+
   @Input() store: any;
 }

@@ -9,6 +9,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 
 @Component({
@@ -27,6 +28,7 @@ export class StorePageComponent implements OnInit {
   cart: Array<Product> = [];
   @Input() storeId: number = 0;
   router = inject(Router);
+  localStorage_service = inject(LocalStorageService)
 
   
 
@@ -43,12 +45,14 @@ export class StorePageComponent implements OnInit {
     })
 
     //---------------
-    localStorage.setItem('cart','1234');
+    this.cart = JSON.parse(localStorage.getItem('Cart') || '[]');
   }
+
   removeFromCart(cartIndex: number) {
     if (cartIndex > -1) {
       this.cart.splice(cartIndex, 1);
     }
+    this.localStorage_service.setItem('Cart', JSON.stringify(this.cart));
   }
 
   goToCheckout() {
