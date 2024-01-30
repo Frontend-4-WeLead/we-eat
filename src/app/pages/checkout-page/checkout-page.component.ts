@@ -25,6 +25,7 @@ export class CheckoutPageComponent implements OnInit {
   router = inject(Router);
   orderCompleted: boolean=false;
   showAlert: boolean = false;
+  completedOrder:Array<any> = [];
 
   ngOnInit(): void {
 
@@ -47,6 +48,7 @@ export class CheckoutPageComponent implements OnInit {
   completePurchase() {
     if (this.cart && this.cart.length > 0 && this.address!="MISSING ADDRESS") {
       this.orderCompleted=true;
+      localStorage.clear();
     }
     else if (this.address=="MISSING ADDRESS"){
       this.showAlert = true;

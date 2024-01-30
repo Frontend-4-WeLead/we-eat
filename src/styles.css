@@ -85,3 +85,7 @@ a,button{
 .dp-backdrop.dp-modal-backdrop .dp-close-modal {
     color: #000;
 }
+
+.dp-backdrop.dp-modal-backdrop .list-group-flush > .list-group-item {
+    background: transparent;
+}
