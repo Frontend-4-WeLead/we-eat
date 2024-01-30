@@ -48,3 +48,7 @@
 	border-radius: 5px;
 	padding: 40px 20px;
 }
+
+.store-cart-wrapper .secondary-title {
+    margin-top: 0;
+}
