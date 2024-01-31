@@ -22,6 +22,7 @@ ngOnInit(): void {
     firstname: new FormControl(),
     lastname: new FormControl(),
     email: new FormControl(),
+    phonenumber: new FormControl(),
     password: new FormControl()
   });
  }

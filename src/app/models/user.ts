@@ -4,6 +4,7 @@ export interface User {
     firstName: string;
     lastName: string;
     email: string;
+    phoneNumber: string;
     image_url: string;
     order_list: Order[];
     address_list: Address[];
