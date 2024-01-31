@@ -8,16 +8,14 @@ img {
 
 .active-btn{
   align-items: center;
-  background-color: #FFE7E7;
+  background-color: #FAB800;
   background-position: 0 0;
-  border: 1px solid #FEE0E0;
+  border: 1px solid #FAB800;
   border-radius: 11px;
   box-sizing: border-box;
-  color: #D33A2C;
   cursor: pointer;
   display: flex;
-  font-size: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 33.4929px;
   padding: 2px 12px;
   text-align: left;
